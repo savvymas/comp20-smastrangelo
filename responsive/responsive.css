@@ -1,0 +1,47 @@
+@media only screen and (min-width: 1200px) {
+    /* airplane safety */
+    .software {
+        width: 450px;
+        height: 580px;
+        background: url('software.png') 0 0px;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    /* elevator safety */
+    .software {
+        width: 400px;
+        height: 580px;
+        background: url('software.png') -450px 0px;
+    }
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    /* computerized voting */
+    .software {
+        width: 335px;
+        height: 580px;
+        background: url('software.png') -870px 0px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    /* wait really */
+    .software {
+        width: 710px;
+        height: 635px;
+        background: url('software.png') 0px -580px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* blockchain */
+    .software {
+        width: 500px;
+        height: 635px;
+        background: url('software.png') -710px -580px;
+    }
+}
+
+
