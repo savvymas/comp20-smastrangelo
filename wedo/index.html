@@ -14,9 +14,9 @@
 <div id="lyrics"></div>
 
 <script>
-	<div id="lyrics">
-        Who controls the British crown?
-    </div>
+	var v = document.getElementsByTagName("video")[0];
+    v.addEventListener("seeked", function() { v.play(); }, true);
+    v.currentTime = 10.0;
 </script>
 </body>
 </html>	
