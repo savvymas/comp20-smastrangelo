@@ -11,14 +11,17 @@
 <h1 id="title">We Do</h1>
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
-<div id="lyrics"></div>
+<div id="lyrics">
+    timer.innerHTML = video.currentTime;
+</div>
+
 
 <script>
-	var v = document.getElementsByTagName("video")[0];
+	var lyric = document.getElementById("lyric");
     v.addEventListener("seeked", function() { v.play(); }, true);
-    v.currentTime = 10.0;
     <div id="lyrics">
         Who controls the British crown?
+        timer.innerHTML = video.currentTime;
     </div>
     
 </script>
