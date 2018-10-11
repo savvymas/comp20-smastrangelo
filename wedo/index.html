@@ -14,20 +14,19 @@
 
     
 <script>
-	var v = document.getElementsByTagName("video")[0];
-   // v.addEventListener("seeked", function() { v.play(); }, true);
-    if (v.currentTime <= 10){
-        v.textContent = "Who has the crown?";
-        //document.write("Who has the crown?");
-        //v.timer.innerHTML = v.currentTime;
-    } else if (v.currentTime > 10){
-        v.textContent = "Next lyric";
-        //document.write("Next lyric");
-        //v.timer.innerHTML = v.currentTime;
-    } else {
-        v.textContent = "final lyric";
-        //document.write("Final lyric");
-        //v.timer.innerHTML = v.currentTime;
+	var v = document.getElementsById("video");
+    v.ontimeupdate = function() {showLyric()};
+    function showLyrics () {
+        if (v.currentTime <= 5){
+            document.write("Who has the British crown?");
+            v.innerHTML = v.currentTime;
+        } else  if (v.currentTime > 5){
+            document.write("Next");
+            v.innerHTML = v.currentTime;
+        } else {
+            document.write("Final");
+            v.innerHTML = v.currentTime;
+        }
     }
 
 
