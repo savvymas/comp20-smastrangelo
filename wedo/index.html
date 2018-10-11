@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -20,94 +20,37 @@
     var caption = document.getElementById("captions");
     video.addEventListener("timeupdate", function() {
         timer.innerHTML = video.currentTime;
-        if (video.currentTime <= 5){
-            caption.innerHTML="Who has the British crown?";
-        } else  if (video.currentTime > 5){
-            caption.innerHTML = "Next lyric";
+        if (video.currentTime >= 4 && video.currentTime < 6){
+            caption.innerHTML="Who controls the British crown?";
+        } else  if (video.currentTime >= 6 && video.currenTime < 9){
+            caption.innerHTML = "Who keeps the metric system down?";
+        } else  if (video.currenTime >= 9 && video.currenTime < 12){
+            caption.innerHTML = "We do, we do!";
+        } else if (video.currenTime >= 12 && video.currenTime < 14){
+            caption.innerHTML = "Who keeps Atlantis off the maps?";
+        } else if (video.currenTime >= 14 && video.currenTime < 16){
+            caption.innerHTML = "Who keeps the Martians under wraps?";
+        } else if (video.currenTime >= 16 && video.currenTime < 20){
+            caption.innerHTML = "We do, we do!";
+        } else if (video.currenTime >= 20 && video.currenTime < 25){
+            caption.innerHTML = "Who holds back the electric car?";
+        } else if (video.currenTime >= 25 && video.currenTime < 29){
+            caption.innerHTML = "Who makes Steve Guttenberg a star?";
+        } else if (video.currenTime >= 29 && video.currenTime < 34){
+            caption.innerHTML = "We do, we do!";
+        } else if (video.currenTime >= 34 && video.currenTime < 36){
+            caption.innerHTML = "Who robs cavefish of their sight?";
+        } else if (video.currenTime >= 36 && video.currenTime < 38){
+            caption.innerHTML = "Who rigs every Oscar night?";
+        } else if (video.currenTime >= 38 && video.currenTime < 40){
+            caption.innerHTML = "We do!";
         } else {
-            caption.innerHTML = "";
-        }
+            caption.innerHTML = "We do!";
+        } 
     }, false);
 
 
     
 </script>
 </body>
-</html>	 -->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>Double Rainbow</title>
-<!-- <link href="rainbow.css" rel="stylesheet"/> -->
-
-</head>
-
-<body>
-
-<h1 id="Title">Double Rainbow Song!</h1>
-
-<video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="video"></video>
-<p>Time (in seconds): <span id="timer"></span></p>
-<div id="captions"></div> 
-<div id="Image"></div>
-
-<p><button type="button" onclick="video.play();">Play</button>
-<button type="button" onclick="video.pause();">Pause</button>
-<button type="button" onclick="video.currentTime = video.currentTime - 1;"><< Rewind</button>
-<button type="button" onclick="video.currentTime = video.currentTime + 1">>> Forward</button>
-</p>
-<script type="text/javascript">
-	var video = document.getElementById("video");
-	var caption = document.getElementById("captions");
-	var image = document.getElementById("Image");
-	var timer = document.getElementById("timer");
-	video.addEventListener("timeupdate", function() {
-		console.log("Hello Nate!");
-		timer.innerHTML = video.currentTime;
-		
-		if (video.currentTime < 4) {
-			caption.innerHTML ="<h3>This will not work on FireFox...Sorry!</h3>";
-		}
-		else if (video.currentTime > 4 && video.currentTime < 5.5) {
-			caption.innerHTML = "<h3>Double Rainbow!</h3>";
-		}
-		else if (video.currentTime > 5.5 && video.currentTime < 6.5) {
-			caption.innerHTML = "<h1>OH MY GOD!</h1>";
-		}
-		else if (video.currentTime > 6.5 && video.currentTime < 16.8) {
-			caption.innerHTML = "<h3>Double Rainbow!</h3>";
-		}
-		else if (video.currentTime > 16.8 && video.currentTime < 18) {
-			caption.innerHTML = "<h1>WHAT DOES THIS MEAN?!</h1>";
-		}
-		else if (video.currentTime > 18 && video.currentTime < 20) {
-			caption.innerHTML = "<h2>It's so BRIGHT, so VIVID!</h2>";
-		}
-		else if (video.currentTime > 20 && video.currentTime < 22.5) {
-			caption.innerHTML = "<h3>Double Rainbow!</h3>";
-		}
-		else if (video.currentTime > 22.5 && video.currentTime < 24.5) {
-			caption.innerHTML = "<h2>It's so intense...</h2>";
-		}
-		else if (video.currentTime > 24.5 && video.currentTime < 26) {
-			caption.innerHTML = "<h1>WHAT DOES THIS MEAN?!</h1>";
-		}
-		else if (video.currentTime > 26 && video.currentTime < 32.3) {
-			caption.innerHTML = "<h3>It's starting to look like a TRIPLE RAINBOW!</h3>";
-		}
-		else if (video.currentTime > 32.3 && video.currentTime < 52) {
-			caption.innerHTML = '<p><img src="spongebob.jpg" alt="Image" /></p>';
-		}
-		else if (video.currentTime > 52) {
-			caption.innerHTML = "<h3>Thanks For Watching!</h3>";
-		}
-		else {
-			caption.innerHTML ="";
-		}
-		}, false);
-</script>
-</body>
-</html>
+</html>	
