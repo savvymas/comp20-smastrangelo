@@ -11,11 +11,11 @@
 <h1 id="title">We Do</h1>
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
-<div id="lyric">
+
     
 <script>
 	var v = document.getElementsByTagName("video")[0];
-    v.addEventListener("seeked", function() { v.play(); }, true);
+   // v.addEventListener("seeked", function() { v.play(); }, true);
     if (v.currentTime <= 10){
         v.textContent = "Who has the crown?";
         //document.write("Who has the crown?");
