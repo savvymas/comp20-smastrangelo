@@ -14,22 +14,19 @@
 
     
 <script>
-
-    function showLyrics () {
-        if (v.currentTime <= 5){
-            document.write("Who has the British crown?");
-            v.innerHTML = v.currentTime;
-        } else  if (v.currentTime > 5){
-            document.write("Next");
-            v.innerHTML = v.currentTime;
-        } else {
-            document.write("Final");
-            v.innerHTML = v.currentTime;
-        }
+	var v = document.getElementById("video");
+    if (v.currentTime <= 5){
+        document.write("Who has the British crown?");
+        //v.innerHTML = v.currentTime;
+    } else  if (v.currentTime > 5){
+        document.write("Next");
+        // v.innerHTML = v.currentTime;
+    } else {
+        document.write("Final");
+        //v.innerHTML = v.currentTime;
     }
 
-	var v = document.getElementById("video");
-    v.ontimeupdate = showLyric();
+
     
 </script>
 </body>
