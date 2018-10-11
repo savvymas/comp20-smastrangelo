@@ -11,20 +11,21 @@
 <h1 id="title">We Do</h1>
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
-
+<div id="timer"></div>
     
 <script>
-	var v = document.getElementsByTagName("video");
-    if (v.currentTime <= 5){
-        document.write("Who has the British crown?");
-        //v.innerHTML = v.currentTime;
-    } else  if (v.currentTime > 5){
-        document.write("Next");
-        // v.innerHTML = v.currentTime;
-    } else {
-        document.write("Final");
-        //v.innerHTML = v.currentTime;
-    }
+	var video = document.getElementById("video");
+    var timer = document.getElementById("timer");
+    video.addEventListener("timeupdate", function() {
+        timer.innerHTML = video.currentTime;
+        if (video.currentTime <= 5){
+            caption.innerHTML="Who has the British crown?";
+        } else  if (video.currentTime > 5){
+            caption.innerHTML = "Next lyric";
+        } else {
+            caption.innerHTML = "";
+        }
+    }, false);
 
 
     
