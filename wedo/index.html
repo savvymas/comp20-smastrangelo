@@ -21,7 +21,7 @@
     video.addEventListener("timeupdate", function() {
         timer.innerHTML = video.currentTime;
         if (video.currentTime > 4 && video.currentTime < 6){
-            lyric.innerHTML="<div class=lyric>Who controls the British crown?</div>";
+            lyric.innerHTML="<div id=lyric>Who controls the British crown?</div>";
         } else  if (video.currentTime > 6 && video.currentTime < 8){
             lyric.innerHTML = "Who keeps the metric system down?";
         } else  if (video.currentTime > 8 && video.currentTime < 12){
