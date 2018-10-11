@@ -16,13 +16,13 @@
 	var v = document.getElementsByTagName("video")[0];
     v.addEventListener("seeked", function() { v.play(); }, true);
     if (v.currentTime <= 10){
-        document.write("Who has the crown?");
+        v.write("Who has the crown?");
         v.timer.innerHTML = v.currentTime;
     } else if (v.currentTime > 10){
-        document.write("Next lyric");
+        v.write("Next lyric");
         v.timer.innerHTML = v.currentTime;
     } else {
-        document.write("Final lyric");
+        v.write("Final lyric");
         v.timer.innerHTML = v.currentTime;
     }
 
