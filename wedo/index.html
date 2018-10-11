@@ -12,17 +12,17 @@
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
 
-
 <script>
 	var v = document.getElementsByTagName("video")[0];
+
     if (v.currentTime <= 10){
-        timer.innerHTML = v.currentTime;
+        v.timer.innerHTML = v.currentTime;
         document.write("Who has the crown?");
     } else if (v.currentTime > 10){
-        timer.innerHTML = v.currentTime;
+        v.timer.innerHTML = v.currentTime;
         document.write("Next lyric");
     } else {
-        timer.innerHTML = v.currentTime;
+        v.timer.innerHTML = v.currentTime;
         document.write("Final lyric");
     }
 
