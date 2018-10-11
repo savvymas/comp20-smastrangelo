@@ -12,16 +12,21 @@
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
 <div id="lyrics">
-    timer.innerHTML = video.currentTime;
+    
 </div>
 
 
 <script>
-	var lyric = document.getElementById("lyric");
-    <div id="lyrics">
-        Who controls the British crown?
-        timer.innerHTML = video.currentTime;
-    </div>
+	var v = document.getElementsByTagName("video");
+    if (v.currentTime <= 10){
+        document.write("Who has the crown?");
+    } else if (v.currentTime > 10){
+        document.write("Next lyric");
+    } else {
+        document.write("Final lyric");
+    }
+
+
     
 </script>
 </body>
