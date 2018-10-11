@@ -11,13 +11,10 @@
 <h1 id="title">We Do</h1>
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
-<div id="lyrics">
-    
-</div>
 
 
 <script>
-	var v = document.getElementsByTagName("video");
+	var v = document.getElementsByTagName("video")[0];
     if (v.currentTime <= 10){
         document.write("Who has the crown?");
     } else if (v.currentTime > 10){
