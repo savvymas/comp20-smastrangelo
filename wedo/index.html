@@ -12,10 +12,12 @@
 
 <video src="https://www.cs.tufts.edu/comp/20/wedo.mp4" id="wedo" controls></video>
 <div id="timer"></div>
+<div id="captions"></div>
     
 <script>
 	var video = document.getElementById("wedo");
     var timer = document.getElementById("timer");
+    var caption = document.getElementById("captions");
     video.addEventListener("timeupdate", function() {
         timer.innerHTML = video.currentTime;
         if (video.currentTime <= 5){
