@@ -16,14 +16,14 @@
 	var v = document.getElementsByTagName("video")[0];
 
     if (v.currentTime <= 10){
-        v.timer.innerHTML = v.currentTime;
         document.write("Who has the crown?");
+        v.timer.innerHTML = v.currentTime;
     } else if (v.currentTime > 10){
-        v.timer.innerHTML = v.currentTime;
         document.write("Next lyric");
-    } else {
         v.timer.innerHTML = v.currentTime;
+    } else {
         document.write("Final lyric");
+        v.timer.innerHTML = v.currentTime;
     }
 
 
