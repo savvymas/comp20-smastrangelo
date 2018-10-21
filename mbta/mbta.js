@@ -53,10 +53,10 @@ function initMap() {
     fieldsCenter,
     fieldsCorner,
     centralSquare,
-    braintree
+    braintree,
 
   ];
-  var flightPath = new google.maps.Polyline({
+  var stationPath = new google.maps.Polyline({
     path: stationCoordinates,
     geodesic: true,
     strokeColor: '#FF0000',
@@ -64,5 +64,5 @@ function initMap() {
     strokeWeight: 2
   });
 
-  flightPath.setMap(map);
+  stationPath.setMap(map);
 }
