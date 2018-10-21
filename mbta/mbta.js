@@ -37,7 +37,7 @@ function initMap() {
     harvardSq,
     jkfUmass,
     savinHill,
-    // parkStreet,
+    parkStreet,
     // broadway,
     // northQuincy,
     // shawmut,
