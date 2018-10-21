@@ -5,6 +5,6 @@ function initMap() {
     center: southStation,
     zoom: 8
   });
-  var image = 'https://www.google.com/search?q=train+station+emoji&rlz=1C5CHFA_enUS772US772&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj4lM69o5jeAhXylOAKHR-wDmwQ_AUIDigB&biw=1214&bih=755#imgrc=t9GcRR2izbj6jM:';
+  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   var marker = new google.maps.Marker({position: southStation, map: map, icon: image});
 }
