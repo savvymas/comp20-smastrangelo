@@ -31,29 +31,30 @@ function initMap() {
   var braintree = {lat: 42.2078543, lng:  -71.0011385};
 
   var stationCoordinates = [
-    southStation,
-    Andrew,
+    alewife, 
+    davis,
     porterSq,
     harvardSq,
+    centralSquare,
+    kendallMIT,
+    charlesMGH,
+    parkStreet,
+    downtownCrossing, 
+    SouthStation,
+    broadway,
+    Andrew,
     jkfUmass,
-    // savinHill,
-    // parkStreet,
-    // broadway,
-    // northQuincy,
-    // shawmut,
-    // davis, 
-    // alewife, 
-    // kendallMIT,
-    // charlesMGH,
-    // downtownCrossing, 
-    // quincyCenter,
-    // quincyAdams,
-    // ashmont,
-    // wollaston,
-    // fieldsCenter,
-    // fieldsCorner,
-    // centralSquare,
-    // braintree,
+    northQuincy, //braintree branch
+    wollaston, //braintree branch
+    quincyCenter, //braintree branch
+    quincyAdams, //braintree branch
+    braintree, //braintree branch
+    savinHill, //ashmont branch
+    fieldsCorner,//ashmont branch
+    shawmut,//ashmont branch
+    ashmont, //ashmont branch
+    
+    
 
   ];
   var stationPath = new google.maps.Polyline({
