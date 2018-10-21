@@ -44,15 +44,15 @@ function initMap() {
     broadway,
     Andrew,
     jkfUmass,
-    northQuincy, //braintree branch
-    wollaston, //braintree branch
-    quincyCenter, //braintree branch
-    quincyAdams, //braintree branch
-    braintree, //braintree branch
-    savinHill, //ashmont branch
-    fieldsCorner,//ashmont branch
-    shawmut,//ashmont branch
-    ashmont, //ashmont branch
+    // northQuincy, //braintree branch
+    // wollaston, //braintree branch
+    // quincyCenter, //braintree branch
+    // quincyAdams, //braintree branch
+    // braintree, //braintree branch
+    // savinHill, //ashmont branch
+    // fieldsCorner,//ashmont branch
+    // shawmut,//ashmont branch
+    // ashmont, //ashmont branch
     
     
 
