@@ -54,7 +54,6 @@ function initMap() {
     // shawmut,//ashmont branch
     // ashmont, //ashmont branch
 
-    test 
     
     
 
