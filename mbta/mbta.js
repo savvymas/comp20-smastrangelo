@@ -43,7 +43,7 @@ function initMap() {
     SouthStation,
     broadway,
     Andrew,
-    jkfUmass,
+    //jkfUmass,
     // northQuincy, //braintree branch
     // wollaston, //braintree branch
     // quincyCenter, //braintree branch
