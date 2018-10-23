@@ -5,13 +5,11 @@ function initMap() {
     zoom: 8,
   });
 
- 
-
-
+  getMyLocation();
 }
 
-
-//   var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
+var southStation =  {lat: 42.352271, lng: -71.05524200000001};
+var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
 //   var Andrew = {lat: 42.330154, lng: -71.057655};
 //   var marker2 = new google.maps.Marker({position: Andrew, map: map, icon: 'train_small.png'});
 //   var porterSq = {lat: 42.3884, lng: -71.11914899999999};
