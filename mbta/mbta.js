@@ -45,7 +45,7 @@ function initMap() {
   ];
 
   var braintreeBranch = [
-    jkfUmass,
+    {lat: 42.320685, lng: -71.052391},
     northQuincy, //braintree branch
     wollaston, //braintree branch
     quincyCenter, //braintree branch
@@ -54,7 +54,7 @@ function initMap() {
   ];
 
   var ashmontBranch = [
-    jkfUmass,
+    {lat: 42.320685, lng: -71.052391},
     savinHill, //ashmont branch
     fieldsCorner,//ashmont branch
     shawmut,//ashmont branch
