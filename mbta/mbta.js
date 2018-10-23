@@ -120,7 +120,6 @@ function setMarkers(map) {
 
 var myLat = 0;
 var myLng = 0;
-var me = new google.maps.LatLng(myLat, myLng);
 function renderMap() {
     console.log("in render map");
     me = new google.maps.LatLng();
