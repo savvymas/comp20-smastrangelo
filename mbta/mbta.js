@@ -8,7 +8,7 @@ function initMap() {
   var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   var marker = new google.maps.Marker({position: southStation, map: map, icon: image});
 
-  var Andrew = {lat:  42.330154, lng: -71.057655};
+  var Andrew = {lat: 42.330154, lng: -71.057655};
   var porterSq = {lat: 42.3884, lng: -71.11914899999999};
   var harvardSq = {lat: 42.373362, lng:  -71.118956};
   var jkfUmass = {lat: 42.320685, lng: -71.052391};
@@ -21,20 +21,20 @@ function initMap() {
   var alewife = {lat: 42.395428, lng: -71.142483};
   var kendallMIT = {lat: 42.36249079, lng: -71.08617653};
   var charlesMGH = {lat: 42.361166, lng:  -71.070628};
-  var downtownCrossing = {lat:  42.355518, lng: -71.060225};
+  var downtownCrossing = {lat: 42.355518, lng: -71.060225};
   var quincyCenter = {lat:  42.251809, lng: -71.005409};
   var quincyAdams = {lat:  42.233391, lng: -71.007153};
   var ashmont = {lat: 42.284652, lng: -71.06448899999999};
   var wollaston = {lat: 42.2665139, lng: -71.0203369};
   var fieldsCorner = {lat: 42.300093, lng: -71.061667};
-  var centralSquare = {lat:  42.365486, lng:  -71.103802};
-  var braintree = {lat: 42.2078543, lng:  -71.0011385};
+  var centralSquare = {lat: 42.365486, lng: -71.103802};
+  var braintree = {lat: 42.2078543, lng: -71.0011385};
 
   var stationCoordinates = [
-    alewife, 
-    davis,
-    porterSq,
-    harvardSq,
+    {lat: 42.395428, lng: -71.142483}, //alewife
+    {lat: 42.39674, lng: -71.121815}, //davis,
+    {lat: 42.3884, lng: -71.11914899999999}, //porterSq,
+    {lat: 42.373362, lng:  -71.118956}, //harvardSq,
     centralSquare,
     kendallMIT,
     charlesMGH,
@@ -88,6 +88,6 @@ function initMap() {
   });
 
   stationPath.setMap(map);
-  braintreePath.setMap(map);
-  ashmontPath.setMap(map);
+  //braintreePath.setMap(map);
+  //ashmontPath.setMap(map);
 }
