@@ -15,6 +15,7 @@ function initMap() {
             lng: position.coords.longitude
         };
 
+        console.log("here");
         console.log(pos);
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
