@@ -118,17 +118,10 @@ function initMap() {
   var myLat = 0;
   var myLng = 0;
   var me = new google.maps.LatLng(myLat, myLng);
-  var myOptions = {
-    zoom: 13, // The larger the zoom number, the bigger the zoom
-    center: me,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-   };
   var map;
-  var marker;
+  var markerMe;
   var infowindow = new google.maps.InfoWindow();
 
-    map = new google.maps.Map(document.getElementById("map"), myOptions);
-    getMyLocation();
     
 
     function renderMap() {
@@ -138,17 +131,17 @@ function initMap() {
         map.panTo(me);
         
         // Create a marker
-        marker = new google.maps.Marker({
+        markerMe = new google.maps.Marker({
             position: me,
             title: "Here I Am!",
             map: map
         });
-        marker.setMap(map);
+        markerMe.setMap(map);
             
         // Open info window on click of marker
-        google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(markerMe, 'click', function() {
             infowindow.setContent(marker.title);
-            infowindow.open(map, marker);
+            infowindow.open(map, markerMe);
         });
     } 
 
