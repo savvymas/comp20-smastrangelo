@@ -110,32 +110,36 @@ function initMap() {
   braintreePath.setMap(map);
   ashmontPath.setMap(map);
 
-  var infoWindow = new google.maps.InfoWindow;
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
-      map.setCenter(pos);
-      var selfMarker = new google.maps.Marker({position: pos, map: map});
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+}
+function renderMap() {
+    me = new google.maps.LatLng(myLat, myLng);
+    // Update map and go there...
+    map.panTo(me);
+    
+    // Create a marker
+    marker = new google.maps.Marker({
+        position: me,
+        title: "Here I Am!"
     });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
+    marker.setMap(map);
+        
+    // Open info window on click of marker
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(marker.title);
+        infowindow.open(map, marker);
+    });
+}
 
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-  }
+function getMyLocation() {
+    if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+        navigator.geolocation.getCurrentPosition(function(position) {
+            myLat = position.coords.latitude;
+            myLng = position.coords.longitude;
+            renderMap();
+        });
+    }
+    else {
+        alert("Geolocation is not supported by your web browser.  What a shame!");
+    }
 }
