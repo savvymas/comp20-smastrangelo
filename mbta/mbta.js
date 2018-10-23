@@ -1,6 +1,3 @@
-var myLat = 0;
-var myLng = 0;
-var me = new google.maps.LatLng(myLat, myLng);
 function initMap() {
   var southStation =  {lat: 42.352271, lng: -71.05524200000001};
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -121,10 +118,12 @@ function setMarkers(map) {
 
 }
 
-
-function renderMap(myLat, myLng) {
+var myLat = 0;
+var myLng = 0;
+var me = new google.maps.LatLng(myLat, myLng);
+function renderMap() {
     console.log("in render map");
-    me = new google.maps.LatLng(myLat, myLng);
+    me = new google.maps.LatLng();
     // Update map and go there...
     map.panTo(me);
     
@@ -132,7 +131,6 @@ function renderMap(myLat, myLng) {
     markerMe = new google.maps.Marker({
         position: me,
         title: "Here I Am!",
-        map: map
     });
     markerMe.setMap(map);
         
@@ -148,10 +146,10 @@ function getMyLocation() {
         console.log("hit 1");
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("hit 2");
-            var myLat = position.coords.latitude;
-            var myLng = position.coords.longitude;
+            myLat = position.coords.latitude;
+            myLng = position.coords.longitude;
             console.log("reached if");
-            renderMap(myLat, myLng);
+            renderMap();
         });
     }
     else {
