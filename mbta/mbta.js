@@ -115,8 +115,11 @@ function initMap() {
   braintreePath.setMap(map);
   ashmontPath.setMap(map);
 
+  var myLat = 0;
+  var myLng = 0;
+  var me = new google.maps.LatLng(myLat, myLng);
 
-    function renderMap(myLat, myLng) {
+    function renderMap() {
         console.log("in render map");
         me = new google.maps.LatLng(myLat, myLng);
         // Update map and go there...
@@ -145,7 +148,7 @@ function initMap() {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
                 console.log("reached if");
-                renderMap(myLat, myLng);
+                renderMap();
             });
         }
         else {
