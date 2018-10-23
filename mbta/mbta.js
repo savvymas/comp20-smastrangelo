@@ -4,8 +4,7 @@ function initMap() {
     center: southStation,
     zoom: 8
   });
-  //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-  //var image = '<a href="https://icons8.com">Icon pack by Icons8</a>'
+
   var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
   var Andrew = {lat: 42.330154, lng: -71.057655};
   var marker2 = new google.maps.Marker({position: Andrew, map: map, icon: 'train_small.png'});
@@ -110,4 +109,32 @@ function initMap() {
   stationPath.setMap(map);
   braintreePath.setMap(map);
   ashmontPath.setMap(map);
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+      var selfMarker = new google.maps.Marker({position: pos, map: map});
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  }
 }
