@@ -130,12 +130,13 @@ function renderMap(map) {
     markerMe = new google.maps.Marker({
         position: me,
         title: "Here I Am!",
+        map: map
     });
     markerMe.setMap(map);
         
     // Open info window on click of marker
     google.maps.event.addListener(markerMe, 'click', function() {
-        infowindow.setContent(marker.title);
+        infowindow.setContent(markerMe.title);
         infowindow.open(map, markerMe);
     });
 } 
