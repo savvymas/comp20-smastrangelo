@@ -126,10 +126,10 @@ function initMap() {
         marker.setMap(map);
             
         // Open info window on click of marker
-        // google.maps.event.addListener(marker, 'click', function() {
-        //     infowindow.setContent(marker.title);
-        //     infowindow.open(map, marker);
-        // });
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(marker.title);
+            infowindow.open(map, marker);
+        });
     } 
 
     function getMyLocation() {
@@ -137,7 +137,6 @@ function initMap() {
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
-                console.log("Inside if statement");
                 renderMap(myLat, myLng);
             });
         }
