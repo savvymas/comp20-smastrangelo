@@ -19,7 +19,7 @@ function initMap() {
         infoWindow.setContent('Location found.');
         infoWindow.open(map);
         map.setCenter(pos);
-        var myMarker = new google.maps.Marker({positions: pos, map: map});
+        var myMarker = new google.maps.Marker({position: pos, map: map});
         }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
