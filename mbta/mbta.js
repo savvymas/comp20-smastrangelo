@@ -41,7 +41,7 @@ function initMap() {
     {lat: 42.352271, lng: -71.05524200000001},
     broadway,
     Andrew,
-    jfkUmass
+    {lat: 42.320685, lng: -71.052391}
   ];
 
   var braintreeBranch = [
