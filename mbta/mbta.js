@@ -14,7 +14,7 @@ function initMap() {
   var harvardSq = {lat: 42.373362, lng:  -71.118956};
   var marker4 = new google.maps.Marker({position: harvardSq, map: map, icon: 'train_small.png'});
   var jkfUmass = {lat: 42.320685, lng: -71.052391};
-  var marker5 = new google.maps.Marker({position: jfkUmass, map: map, icon: 'train_small.png'});
+  var marker5 = new google.maps.Marker({position: {lat: 42.320685, lng: -71.052391}, map: map, icon: 'train_small.png'});
   var savinHill = {lat: 42.31129, lng: -71.053331};
   var marker6 = new google.maps.Marker({position: savinHill, map: map, icon: 'train_small.png'});
   var parkStreet = {lat: 42.35639457, lng: -71.0624242};
