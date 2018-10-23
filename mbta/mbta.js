@@ -124,7 +124,8 @@ function initMap() {
         // Create a marker
         marker = new google.maps.Marker({
             position: me,
-            title: "Here I Am!"
+            title: "Here I Am!",
+            map: map
         });
         marker.setMap(map);
             
