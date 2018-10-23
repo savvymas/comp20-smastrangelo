@@ -116,6 +116,7 @@ function initMap() {
 
 
     function renderMap(myLat, myLng) {
+        console.log("in render map");
         me = new google.maps.LatLng(myLat, myLng);
         // Update map and go there...
         map.panTo(me);
