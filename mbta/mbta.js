@@ -41,8 +41,8 @@ function initMap() {
     parkStreet,
     downtownCrossing, 
     SouthStation,
-    broadway,
-    Andrew,
+    //broadway,
+    //Andrew,
     //jkfUmass,
     // northQuincy, //braintree branch
     // wollaston, //braintree branch
