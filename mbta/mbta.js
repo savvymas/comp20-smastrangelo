@@ -5,6 +5,8 @@ function initMap() {
     zoom: 8
   });
 
+  getMyLocation();
+
   var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
   var Andrew = {lat: 42.330154, lng: -71.057655};
   var marker2 = new google.maps.Marker({position: Andrew, map: map, icon: 'train_small.png'});
@@ -111,7 +113,12 @@ function initMap() {
   ashmontPath.setMap(map);
 
 
+    
+
 }
+var myLat = 0;
+var myLng = 0;
+var me = new google.maps.LatLng(myLat, myLng);
 function renderMap() {
     me = new google.maps.LatLng(myLat, myLng);
     // Update map and go there...
@@ -129,7 +136,7 @@ function renderMap() {
         infowindow.setContent(marker.title);
         infowindow.open(map, marker);
     });
-}
+} 
 
 function getMyLocation() {
     if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
