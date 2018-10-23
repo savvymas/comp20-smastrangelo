@@ -1,5 +1,3 @@
-var map;
-var southStation =  {lat: 42.352271, lng: -71.05524200000001};
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: southStation,
@@ -7,7 +5,7 @@ function initMap() {
   });
   var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   var marker = new google.maps.Marker({position: southStation, map: map, icon: image});
-
+  var southStation =  {lat: 42.352271, lng: -71.05524200000001};
   var Andrew = {lat: 42.330154, lng: -71.057655};
   var porterSq = {lat: 42.3884, lng: -71.11914899999999};
   var harvardSq = {lat: 42.373362, lng:  -71.118956};
