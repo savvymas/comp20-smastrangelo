@@ -28,7 +28,9 @@ function initMap() {
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
-        myMarker = new google.maps.Marker({position: pos, map: map});
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
 
