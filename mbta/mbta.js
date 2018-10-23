@@ -43,7 +43,7 @@ function initMap() {
     SouthStation,
     broadway,
     Andrew,
-    jfkUmass
+    //jfkUmass
   ];
 
   var braintreeBranch = [
