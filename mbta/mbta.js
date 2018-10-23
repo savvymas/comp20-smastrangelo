@@ -5,7 +5,28 @@ function initMap() {
     zoom: 8,
   });
 
-  getMyLocation();
+  var infoWindow = new google.maps.InfoWindow;
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+    }, function() {
+        alert("Geolocation is not supported by your web browser.  What a shame!");
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    alert("Geolocation is not supported by your web browser.  What a shame!");
+  }
+
 
 }
 
@@ -116,44 +137,42 @@ function initMap() {
 //   ashmontPath.setMap(map);
 
 
+// function renderMap(myLat, myLng) {
+//     console.log("in render map");
+//     me = new google.maps.LatLng(myLat, myLng);
+//     // Update map and go there...
+//     map.panTo(me);
     
-
-function renderMap(myLat, myLng) {
-    console.log("in render map");
-    me = new google.maps.LatLng(myLat, myLng);
-    // Update map and go there...
-    map.panTo(me);
-    
-    // Create a marker
-    markerMe = new google.maps.Marker({
-        position: me,
-        title: "Here I Am!",
-        map: map
-    });
-    markerMe.setMap(map);
+//     // Create a marker
+//     markerMe = new google.maps.Marker({
+//         position: me,
+//         title: "Here I Am!",
+//         map: map
+//     });
+//     markerMe.setMap(map);
         
-    // Open info window on click of marker
-    google.maps.event.addListener(markerMe, 'click', function() {
-        infowindow.setContent(marker.title);
-        infowindow.open(map, markerMe);
-    });
-} 
+//     // Open info window on click of marker
+//     google.maps.event.addListener(markerMe, 'click', function() {
+//         infowindow.setContent(marker.title);
+//         infowindow.open(map, markerMe);
+//     });
+// } 
 
-function getMyLocation() {
-    if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-        console.log("hit 1");
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log("hit 2");
-            var myLat = position.coords.latitude;
-            var myLng = position.coords.longitude;
-            console.log("reached if");
-            renderMap(myLat, myLng);
-        });
-    }
-    else {
-        console.log("hit error");
-        alert("Geolocation is not supported by your web browser.  What a shame!");
-    }
-}
+// function getMyLocation() {
+//     if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+//         console.log("hit 1");
+//         navigator.geolocation.getCurrentPosition(function(position) {
+//             console.log("hit 2");
+//             var myLat = position.coords.latitude;
+//             var myLng = position.coords.longitude;
+//             console.log("reached if");
+//             renderMap(myLat, myLng);
+//         });
+//     }
+//     else {
+//         console.log("hit error");
+//         alert("Geolocation is not supported by your web browser.  What a shame!");
+//     }
+// }
    
 
