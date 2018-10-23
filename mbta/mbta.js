@@ -33,9 +33,9 @@ function initMap() {
   var stationCoordinates = [
     alewife, 
     davis,
-    porterSq,
-    harvardSq,
-    centralSquare,
+    //porterSq,
+    //harvardSq,
+    //centralSquare,
     //kendallMIT,
     //charlesMGH,
    // parkStreet,
@@ -58,6 +58,7 @@ function initMap() {
     
 
   ];
+
   var stationPath = new google.maps.Polyline({
     path: stationCoordinates,
     geodesic: true,
