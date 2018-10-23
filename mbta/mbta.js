@@ -35,14 +35,14 @@ function initMap() {
     {lat: 42.39674, lng: -71.121815}, //davis,
     {lat: 42.3884, lng: -71.11914899999999}, //porterSq,
     {lat: 42.373362, lng:  -71.118956}, //harvardSq,
-    centralSquare,
-    kendallMIT,
-    charlesMGH,
-    parkStreet,
-    downtownCrossing, 
-    SouthStation,
-    broadway,
-    Andrew,
+    // centralSquare,
+    // kendallMIT,
+    // charlesMGH,
+    // parkStreet,
+    // downtownCrossing, 
+    // SouthStation,
+    // broadway,
+    // Andrew,
     //jfkUmass
   ];
 
