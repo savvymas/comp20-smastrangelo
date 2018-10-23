@@ -2,7 +2,7 @@ function initMap() {
   var southStation =  {lat: 42.352271, lng: -71.05524200000001};
   var map = new google.maps.Map(document.getElementById('map'), {
     center: southStation,
-    zoom: 13,
+    zoom: 10,
   });
 
   getMyLocation(map);
