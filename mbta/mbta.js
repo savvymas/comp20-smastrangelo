@@ -5,8 +5,37 @@ function initMap() {
     zoom: 10,
   });
 
-  getMyLocation(map);
-  //setMarkers(map);
+  var infoWindow = new google.maps.InfoWindow;
+
+  // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
+        infoWindow.open(map);
+        map.setCenter(pos);
+        }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+    
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+  setMarkers(map);
 }
 
 function setMarkers(map) {
@@ -118,55 +147,6 @@ function setMarkers(map) {
 
 }
 
-//var myLat = 0;
-//var myLng = 0;
-function renderMap(map) {
-    console.log("in render map");
-    me = new google.maps.LatLng(myLat, myLng);
-    // Update map and go there...
-    map.panTo(me);
-    
-    // Create a marker
-    markerMe = new google.maps.Marker({
-        position: me,
-        title: "Here I Am!",
-        map: map
-    });
-    markerMe.setMap(map);
-        
-    // Open info window on click of marker
-    google.maps.event.addListener(markerMe, 'click', function() {
-        infowindow.setContent(markerMe.title);
-        infowindow.open(map, markerMe);
-    });
-} 
 
-function getMyLocation(map) {
-    if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-        console.log("hit 1");
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log("hit 2");
-            var myLat = position.coords.latitude;
-            var myLng = position.coords.longitude;
-            console.log("reached if");
-            me = new google.maps.LatLng(myLat, myLng);
-            // Update map and go there...
-            map.panTo(me);
-            markerMe = new google.maps.Marker({
-                position: me,
-                title: "Here I Am!",
-                map: map
-            });
-            markerMe.setMap(map);
-
-
-            
-        });
-    }
-    else {
-        console.log("hit error");
-        alert("Geolocation is not supported by your web browser.  What a shame!");
-    }
-}
    
 
