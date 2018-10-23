@@ -5,8 +5,8 @@ function initMap() {
     zoom: 13,
   });
 
-  getMyLocation();
-  setMarkers(map);
+  getMyLocation(map);
+  //setMarkers(map);
 }
 
 function setMarkers(map) {
@@ -120,7 +120,7 @@ function setMarkers(map) {
 
 var myLat = 0;
 var myLng = 0;
-function renderMap() {
+function renderMap(map) {
     console.log("in render map");
     me = new google.maps.LatLng();
     // Update map and go there...
@@ -140,7 +140,7 @@ function renderMap() {
     });
 } 
 
-function getMyLocation() {
+function getMyLocation(map) {
     if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
         console.log("hit 1");
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -148,7 +148,7 @@ function getMyLocation() {
             myLat = position.coords.latitude;
             myLng = position.coords.longitude;
             console.log("reached if");
-            renderMap();
+            renderMap(map);
         });
     }
     else {
