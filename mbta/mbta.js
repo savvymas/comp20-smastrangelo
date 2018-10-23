@@ -136,9 +136,11 @@ function initMap() {
 
     function getMyLocation() {
         if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+            console.log("hit 1");
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
+                console.log("reached if");
                 renderMap(myLat, myLng);
             });
         }
