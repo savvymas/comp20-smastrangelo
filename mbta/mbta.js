@@ -1,11 +1,8 @@
 function initMap() {
-
-  var myLat = 0;
-  var myLng = 0;
-  var me = new google.maps.LatLng(myLat, myLng);
   var map;
   var markerMe;
   var infowindow = new google.maps.InfoWindow();
+  var me = getMyLocation();
   var southStation =  {lat: 42.352271, lng: -71.05524200000001};
   var map = new google.maps.Map(document.getElementById('map'), {
     center: me,
@@ -13,7 +10,7 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
-  getMyLocation();
+  
 
 
 
@@ -124,7 +121,7 @@ function initMap() {
 
     
 
-    function renderMap() {
+    function renderMap(myLat, myLng) {
         console.log("in render map");
         me = new google.maps.LatLng(myLat, myLng);
         // Update map and go there...
@@ -150,10 +147,10 @@ function initMap() {
             console.log("hit 1");
             navigator.geolocation.getCurrentPosition(function(position) {
                 console.log("hit 2");
-                myLat = position.coords.latitude;
-                myLng = position.coords.longitude;
+                var myLat = position.coords.latitude;
+                var myLng = position.coords.longitude;
                 console.log("reached if");
-                renderMap();
+                renderMap(myLat, myLng);
             });
         }
         else {
