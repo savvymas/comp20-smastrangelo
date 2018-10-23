@@ -38,25 +38,29 @@ function initMap() {
     centralSquare,
     kendallMIT,
     charlesMGH,
-   parkStreet,
+    parkStreet,
     downtownCrossing, 
     SouthStation,
-    //broadway,
-    //Andrew,
-    //jkfUmass,
-    // northQuincy, //braintree branch
-    // wollaston, //braintree branch
-    // quincyCenter, //braintree branch
-    // quincyAdams, //braintree branch
-    // braintree, //braintree branch
-    // savinHill, //ashmont branch
-    // fieldsCorner,//ashmont branch
-    // shawmut,//ashmont branch
-    // ashmont, //ashmont branch
+    broadway,
+    Andrew,
+    jfkUmass
+  ];
 
-    
-    
+  var braintreeBranch = [
+    jkfUmass,
+    northQuincy, //braintree branch
+    wollaston, //braintree branch
+    quincyCenter, //braintree branch
+    quincyAdams, //braintree branch
+    braintree, //braintree branch
+  ];
 
+  var ashmontBranch = [
+    jkfUmass,
+    savinHill, //ashmont branch
+    fieldsCorner,//ashmont branch
+    shawmut,//ashmont branch
+    ashmont, //ashmont branch
   ];
 
   var stationPath = new google.maps.Polyline({
@@ -67,5 +71,23 @@ function initMap() {
     strokeWeight: 2
   });
 
+  var braintreePath = new google.maps.Polyline({
+    path: braintreeBranch,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  var ashmontPath = new google.maps.Polyline({
+    path: ashmontBranch,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
   stationPath.setMap(map);
+  braintreePath.setMap(map);
+  ashmontPath.setMap(map);
 }
