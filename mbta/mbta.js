@@ -6,10 +6,10 @@ function initMap() {
   });
 
   getMyLocation();
-  setMarkers();
+  setMarkers(map);
 }
 
-function setMarkers() {
+function setMarkers(map) {
     var southStation =  {lat: 42.352271, lng: -71.05524200000001};
     var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
       var Andrew = {lat: 42.330154, lng: -71.057655};
