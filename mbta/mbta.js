@@ -110,6 +110,7 @@ function initMap() {
   braintreePath.setMap(map);
   ashmontPath.setMap(map);
 
+  var infoWindow;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
