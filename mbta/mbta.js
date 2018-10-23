@@ -138,6 +138,7 @@ function initMap() {
         if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
             console.log("hit 1");
             navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("hit 2");
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
                 console.log("reached if");
@@ -145,6 +146,7 @@ function initMap() {
             });
         }
         else {
+            console.log("hit error");
             alert("Geolocation is not supported by your web browser.  What a shame!");
         }
     }
