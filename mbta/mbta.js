@@ -118,8 +118,8 @@ function setMarkers(map) {
 
 }
 
-var myLat = 0;
-var myLng = 0;
+//var myLat = 0;
+//var myLng = 0;
 function renderMap(map) {
     console.log("in render map");
     me = new google.maps.LatLng(myLat, myLng);
@@ -146,10 +146,21 @@ function getMyLocation(map) {
         console.log("hit 1");
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("hit 2");
-            myLat = position.coords.latitude;
-            myLng = position.coords.longitude;
+            var myLat = position.coords.latitude;
+            var myLng = position.coords.longitude;
             console.log("reached if");
-            renderMap(map);
+            me = new google.maps.LatLng(myLat, myLng);
+            // Update map and go there...
+            map.panTo(me);
+            markerMe = new google.maps.Marker({
+                position: me,
+                title: "Here I Am!",
+                map: map
+            });
+            markerMe.setMap(map);
+
+
+            
         });
     }
     else {
