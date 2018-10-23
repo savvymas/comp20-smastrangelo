@@ -4,8 +4,9 @@ function initMap() {
     center: southStation,
     zoom: 8
   });
-  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-  var marker = new google.maps.Marker({position: southStation, map: map, icon: image});
+  //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+  //var image = '<a href="https://icons8.com">Icon pack by Icons8</a>'
+  var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train.png'});
   var Andrew = {lat: 42.330154, lng: -71.057655};
   var porterSq = {lat: 42.3884, lng: -71.11914899999999};
   var harvardSq = {lat: 42.373362, lng:  -71.118956};
