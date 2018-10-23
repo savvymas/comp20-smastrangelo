@@ -127,7 +127,7 @@ function initMap() {
   var marker;
   var infowindow = new google.maps.InfoWindow();
 
-    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
     getMyLocation();
     
 
