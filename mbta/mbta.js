@@ -137,7 +137,7 @@ function initMap() {
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
-                alert("Inside if statement");
+                console.log("Inside if statement");
                 renderMap(myLat, myLng);
             });
         }
