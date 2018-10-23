@@ -15,13 +15,15 @@ function initMap() {
             lng: position.coords.longitude
         };
 
+        var myMarker = new google.maps.Marker({position: pos, map: map});
+
         console.log("here");
         console.log(pos);
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         infoWindow.open(map);
         map.setCenter(pos);
-        var myMarker = new google.maps.Marker({position: pos, map: map});
+        //var myMarker = new google.maps.Marker({position: pos, map: map});
         }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
