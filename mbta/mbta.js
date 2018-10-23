@@ -1,16 +1,15 @@
-var map;
 function initMap() {
   var southStation =  {lat: 42.352271, lng: -71.05524200000001};
-  map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: southStation,
     zoom: 8
   });
 
   getMyLocation();
 
-}
 
-var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
+
+  var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
   var Andrew = {lat: 42.330154, lng: -71.057655};
   var marker2 = new google.maps.Marker({position: Andrew, map: map, icon: 'train_small.png'});
   var porterSq = {lat: 42.3884, lng: -71.11914899999999};
@@ -116,36 +115,37 @@ var marker = new google.maps.Marker({position: southStation, map: map, icon: 'tr
   ashmontPath.setMap(map);
 
 
-function renderMap(myLat, myLng) {
-    me = new google.maps.LatLng(myLat, myLng);
-    // Update map and go there...
-    map.panTo(me);
-    
-    // Create a marker
-    marker = new google.maps.Marker({
-        position: me,
-        title: "Here I Am!"
-    });
-    marker.setMap(map);
+    function renderMap(myLat, myLng) {
+        me = new google.maps.LatLng(myLat, myLng);
+        // Update map and go there...
+        map.panTo(me);
         
-    // Open info window on click of marker
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(marker.title);
-        infowindow.open(map, marker);
-    });
-} 
-
-function getMyLocation() {
-    if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-        navigator.geolocation.getCurrentPosition(function(position) {
-            myLat = position.coords.latitude;
-            myLng = position.coords.longitude;
-            renderMap(myLat, myLng);
+        // Create a marker
+        marker = new google.maps.Marker({
+            position: me,
+            title: "Here I Am!"
         });
+        marker.setMap(map);
+            
+        // Open info window on click of marker
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(marker.title);
+            infowindow.open(map, marker);
+        });
+    } 
+
+    function getMyLocation() {
+        if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+            navigator.geolocation.getCurrentPosition(function(position) {
+                myLat = position.coords.latitude;
+                myLng = position.coords.longitude;
+                renderMap(myLat, myLng);
+            });
+        }
+        else {
+            alert("Geolocation is not supported by your web browser.  What a shame!");
+        }
     }
-    else {
-        alert("Geolocation is not supported by your web browser.  What a shame!");
-    }
+   
 }
-    
 
