@@ -29,19 +29,19 @@ function initMap() {
   var braintree = {lat: 42.2078543, lng: -71.0011385};
 
   var stationCoordinates = [
-    {lat: 42.395428, lng: -71.142483}, //alewife
-    {lat: 42.39674, lng: -71.121815}, //davis,
-    {lat: 42.3884, lng: -71.11914899999999}, //porterSq,
-    {lat: 42.373362, lng:  -71.118956}, //harvardSq,
-    // centralSquare,
-    // kendallMIT,
-    // charlesMGH,
-    // parkStreet,
-    // downtownCrossing, 
-    // SouthStation,
-    // broadway,
-    // Andrew,
-    //jfkUmass
+    alewife,
+    davis,
+    porterSq,
+    harvardSq,
+    centralSquare,
+    kendallMIT,
+    charlesMGH,
+    parkStreet,
+    downtownCrossing, 
+    SouthStation,
+    broadway,
+    Andrew,
+    jfkUmass
   ];
 
   var braintreeBranch = [
@@ -86,6 +86,6 @@ function initMap() {
   });
 
   stationPath.setMap(map);
-  //braintreePath.setMap(map);
-  //ashmontPath.setMap(map);
+  braintreePath.setMap(map);
+  ashmontPath.setMap(map);
 }
