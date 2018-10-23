@@ -113,7 +113,7 @@ function initMap() {
   ashmontPath.setMap(map);
 
 
-    function renderMap() {
+    function renderMap(myLat, myLng) {
         me = new google.maps.LatLng(myLat, myLng);
         // Update map and go there...
         map.panTo(me);
@@ -126,10 +126,10 @@ function initMap() {
         marker.setMap(map);
             
         // Open info window on click of marker
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(marker.title);
-            infowindow.open(map, marker);
-        });
+        // google.maps.event.addListener(marker, 'click', function() {
+        //     infowindow.setContent(marker.title);
+        //     infowindow.open(map, marker);
+        // });
     } 
 
     function getMyLocation() {
@@ -137,7 +137,7 @@ function initMap() {
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
-                renderMap();
+                renderMap(myLat, myLng);
             });
         }
         else {
