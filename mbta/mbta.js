@@ -1,7 +1,14 @@
 function initMap() {
+
+  var myLat = 0;
+  var myLng = 0;
+  var me = new google.maps.LatLng(myLat, myLng);
+  var map;
+  var markerMe;
+  var infowindow = new google.maps.InfoWindow();
   var southStation =  {lat: 42.352271, lng: -71.05524200000001};
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: southStation,
+    center: me,
     zoom: 8,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -114,13 +121,6 @@ function initMap() {
   stationPath.setMap(map);
   braintreePath.setMap(map);
   ashmontPath.setMap(map);
-
-  var myLat = 0;
-  var myLng = 0;
-  var me = new google.maps.LatLng(myLat, myLng);
-  var map;
-  var markerMe;
-  var infowindow = new google.maps.InfoWindow();
 
     
 
