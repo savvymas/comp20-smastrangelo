@@ -31,8 +31,8 @@ function initMap() {
   var braintree = {lat: 42.2078543, lng:  -71.0011385};
 
   var stationCoordinates = [
-    alewife, 
-    davis,
+    //alewife, 
+    //davis,
     //porterSq,
     //harvardSq,
     //centralSquare,
