@@ -122,7 +122,7 @@ var myLat = 0;
 var myLng = 0;
 function renderMap(map) {
     console.log("in render map");
-    me = new google.maps.LatLng();
+    me = new google.maps.LatLng(myLat, myLng);
     // Update map and go there...
     map.panTo(me);
     
