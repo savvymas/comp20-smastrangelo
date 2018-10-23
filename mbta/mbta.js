@@ -5,9 +5,7 @@ function initMap() {
     zoom: 10,
   });
 
-  var infoWindow = new google.maps.InfoWindow;
-
-  // Try HTML5 geolocation.
+    var infoWindow = new google.maps.InfoWindow;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
@@ -15,23 +13,17 @@ function initMap() {
             lng: position.coords.longitude
         };
 
-        var myMarker = new google.maps.Marker({position: pos, map: map});
-
-        console.log("here");
-        console.log(pos);
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         infoWindow.open(map);
         map.setCenter(pos);
-        //var myMarker = new google.maps.Marker({position: pos, map: map});
-        }, function() {
+       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -40,7 +32,9 @@ function initMap() {
                                 'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
-  setMarkers(map);
+
+
+    setMarkers(map);
 }
 
 function setMarkers(map) {
