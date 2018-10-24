@@ -16,6 +16,9 @@ function initMap() {
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         myMarker = new google.maps.Marker({position: pos, map: map});
+        myMarker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
         infoWindow.open(map);
         map.setCenter(pos);
        }, function() {
