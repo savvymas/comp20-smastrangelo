@@ -14,10 +14,13 @@ function initMap() {
         };
 
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        //infoWindow.setContent('Location found.');
         myMarker = new google.maps.Marker({position: pos, map: map});
+        myMarker.addListener('click', function() {
+            infowindow.open(map, myMarker);
+        });
       
-        infoWindow.open(map);
+        //infoWindow.open(map);
         map.setCenter(pos);
        }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
