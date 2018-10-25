@@ -189,13 +189,17 @@ function findShortestDistance(pos) {
 
     var allDistances = [];
 
-    allStops.forEach(calculateDis(element));
+    // allStops.forEach(calculateDis(element));
 
-    function calculateDis(element) {
+    // function calculateDis(element) {
+    //     var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, element);
+    //     allDistances.push(dis);
+    // };
+
+    for(let i = 0; i < allStops.length, i++) {
         var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, element);
         allDistances.push(dis);
-    };
-
+    }
 
 
     console.log(allDistances);
