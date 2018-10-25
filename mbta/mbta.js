@@ -63,6 +63,7 @@ function initMap() {
 function getTrainInfo(url) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
+    console.log(url);
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             console.log("Got the data back!");
