@@ -59,12 +59,44 @@ function initMap() {
     setMarkers(map);
 }
 
+
+function getTrainInfo(url) {
+    var request = new XMLHttpRequest();
+    request.open("GET", url, true);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            console.log("Got the data back!");
+            data = request.responseText;
+            //console.log(data);
+            //loc = JSON.parse(data);
+            //elem = document.getElementById("location");
+            //elem.innerHTML = "<p>Carmen Sandiego was last seen at " + loc["description"] + "</p>";
+        }
+        else if (request.readyState == 4 && request.status != 200) {
+            // think 404 or 500
+            document.getElementById("location").innerHTML = "<p>Whoops, something went terribly wrongo</p>";
+        }
+        else {
+            console.log("In progress...");
+        }
+    };
+		// Step 3: trigger the HTTP request
+		// The argument for send() --data that you want to send to web server
+    request.send(null);
+    return data;
+
+
+
+}
+
 function setMarkers(map) {
     var southStation =  {lat: 42.352271, lng: -71.05524200000001};
     var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
+
+
     var southStationWindow = new google.maps.InfoWindow ({
         maxWidth: 200,
-        content: 'https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat'
+        content: getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat'),
     });
     marker.addListener('click', function() {
         southStationWindow.open(map, marker);
