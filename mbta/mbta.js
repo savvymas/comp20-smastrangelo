@@ -73,7 +73,7 @@ function getTrainInfo(url) {
             trainTimes = JSON.parse(data);
             returnHTML = "<ul>";
             for (i = 0; i < trainTimes.length; i++) {
-                returnHTML += "<li>" + trainTimes[i].content + " by " + trainTimes[i].username + 
+                returnHTML += "<li>" + trainTimes[i].content + " by " + trainTimes[i].arrival_time + 
                 "</li>";
             }
             returnHTML += "</ul>";
