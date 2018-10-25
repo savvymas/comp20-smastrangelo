@@ -82,7 +82,7 @@ function getTrainInfo(url) {
 					document.getElementById("trainTimes").innerHTML = "Whoops, something went terribly wrong!";
 		}
 		else if (request.readyState == 3) {
-					document.getElementById("TrainTimes").innerHTML = "Come back soon!";
+					document.getElementById("trainTimes").innerHTML = "Come back soon!";
 		}
 	}
     
