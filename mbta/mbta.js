@@ -191,11 +191,12 @@ function findShortestDistance(pos) {
 
     allStops.forEach(calcDistances);
 
-    function calcDistances(stop) {
+    function calcDistances() {
       var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
       allDistances.push(dis);
     }
 
+    console.log(allDistances);
     return Math.min(allDistances);
 
 
