@@ -197,7 +197,7 @@ function findShortestDistance(pos) {
     // };
 
     for (let i = 0; i < allStops.length; i++) {
-        allDistances.push(google.maps.geometry.spherical.computeDistanceBetween(pos, element));
+        allDistances.push(google.maps.geometry.spherical.computeDistanceBetween(pos, i));
     }
 
 
