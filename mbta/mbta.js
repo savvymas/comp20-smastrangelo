@@ -20,6 +20,11 @@ function initMap() {
         var distance = findShortestDistance(pos);
         var disString = distance.toString();
         infoWindow.setContent(disString);
+        distance.Lat = object.Lat.ToString().Replace(",", ".");
+        distance.Lng = object.Lng.ToString().Replace(",", ".");
+        pos.Lat = object.Lat.ToString().Replace(",", ".");
+        pos.Lng = object.Lng.ToString().Replace(",", ".");
+       
         var shortestPath = [pos, distance];
         var shortestPathLine = new google.maps.Polyline({
             path: shortestPath,
