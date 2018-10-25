@@ -24,7 +24,7 @@ function initMap() {
         myMarker.addListener('click', function() {
             infoWindow.open(map, myMarker);
         });
-      
+
         //infoWindow.open(map);
         map.setCenter(pos);
        }, function() {
@@ -103,7 +103,7 @@ function setMarkers(map) {
         kendallMIT,
         charlesMGH,
         parkStreet,
-        downtownCrossing, 
+        downtownCrossing,
         {lat: 42.352271, lng: -71.05524200000001},
         broadway,
         Andrew,
@@ -158,5 +158,51 @@ function setMarkers(map) {
 }
 
 
-   
+
+function findShortestDistance(pos) {
+    var southStation = new google.maps.LatLng({lat: 42.352271, lng: -71.05524200000001});
+    var Andrew = new google.maps.LatLng({lat: 42.330154, lng: -71.057655});
+    var porterSq = new google.maps.LatLng({lat: 42.3884, lng: -71.11914899999999});
+    var harvardSq = new google.maps.LatLng({lat: 42.373362, lng:  -71.118956});
+    var jkfUmass = new google.maps.LatLng({lat: 42.320685, lng: -71.052391});
+    var savinHill = new google.maps.LatLng({lat: 42.31129, lng: -71.053331});
+    var parkStreet = new google.maps.LatLng({lat: 42.35639457, lng: -71.0624242});
+    var broadway = new google.maps.LatLng({lat: 42.342622, lng: -71.056967});
+    var northQuincy = new google.maps.LatLng({lat: 42.275275, lng: -71.029583});
+    var shawmut = new google.maps.LatLng({lat:42.29312583, lng: -71.06573796000001});
+    var davis = new google.maps.LatLng({lat: 42.39674, lng: -71.121815});
+    var alewife = new google.maps.LatLng({lat: 42.395428, lng: -71.142483});
+    var kendallMIT = new google.maps.LatLng({lat: 42.36249079, lng: -71.08617653});
+    var charlesMGH = new google.maps.LatLng({lat: 42.361166, lng:  -71.070628});
+    var downtownCrossing = new google.maps.LatLng({lat: 42.355518, lng: -71.060225});
+    var quincyCenter = new google.maps.LatLng({lat:  42.251809, lng: -71.005409});
+    var quincyAdams = new google.maps.LatLng({lat:  42.233391, lng: -71.007153});
+    var ashmont = new google.maps.LatLng({lat: 42.284652, lng: -71.06448899999999});
+    var wollaston = new google.maps.LatLng({lat: 42.2665139, lng: -71.0203369});
+    var fieldsCorner = new google.maps.LatLng({lat: 42.300093, lng: -71.061667});
+    var centralSquare = new google.maps.LatLng({lat: 42.365486, lng: -71.103802});
+    var braintree = new google.maps.LatLng({lat: 42.2078543, lng: -71.0011385});
+
+    var allStops = [southStation, Andrew,  porterSq, harvardSq, jkfUmass, savinHill, parkStreet, 
+      broadway, northQuincy, shawmut, davis, alewife, kendallMIT, charlesMGH, downtownCrossing,
+      quincyCenter, quincyAdams, ashmont, wollaston, fieldsCorne, centralSquare, braintree ];
+
+    var allDistances = [];
+
+    allStops.forEach(calcDistances);
+
+
+    function calcDistances(stop) {
+      var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
+      allDistances.push(dis);
+    }
+
+
+
+
+
+}
+
+
+
 
