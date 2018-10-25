@@ -20,12 +20,21 @@ function initMap() {
         var distance = findShortestDistance(pos);
         var disString = distance.toString();
         infoWindow.setContent(disString);
+        var shortestPath = [pos, distance];
+        var shortestPathLine = new google.maps.Polyline({
+            path: shortestPath,
+            geodesic: true,
+            strokeColor: '#00ff00',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+          });
+        shortestPath.setMap(map);
+
         myMarker = new google.maps.Marker({position: pos, map: map});
         myMarker.addListener('click', function() {
             infoWindow.open(map, myMarker);
         });
 
-        //infoWindow.open(map);
         map.setCenter(pos);
        }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
