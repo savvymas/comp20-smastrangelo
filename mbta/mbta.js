@@ -28,7 +28,7 @@ function initMap() {
             strokeOpacity: 1.0,
             strokeWeight: 2
           });
-        shortestPath.setMap(map);
+        shortestPathLine.setMap(map);
 
         myMarker = new google.maps.Marker({position: pos, map: map});
         myMarker.addListener('click', function() {
