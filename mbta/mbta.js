@@ -14,7 +14,10 @@ function initMap() {
         };
 
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
+
+
+        infoWindow.setContent(distance);
         myMarker = new google.maps.Marker({position: pos, map: map});
         myMarker.addListener('click', function() {
             infoWindow.open(map, myMarker);
@@ -37,6 +40,7 @@ function initMap() {
             'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
+
 
 
     setMarkers(map);
