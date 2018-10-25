@@ -185,7 +185,7 @@ function findShortestDistance(pos) {
 
     var allStops = [southStation, Andrew,  porterSq, harvardSq, jkfUmass, savinHill, parkStreet, 
       broadway, northQuincy, shawmut, davis, alewife, kendallMIT, charlesMGH, downtownCrossing,
-      quincyCenter, quincyAdams, ashmont, wollaston, fieldsCorne, centralSquare, braintree ];
+      quincyCenter, quincyAdams, ashmont, wollaston, fieldsCorner, centralSquare, braintree ];
 
     var allDistances = [];
 
