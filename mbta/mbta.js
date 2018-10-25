@@ -1,5 +1,5 @@
 function initMap() {
-  var southStation =  {lat: 42.352271, lng: -71.05524200000001};
+  var southStation =  new google.maps.LatLng({lat: 42.352271, lng: -71.05524200000001});
   var map = new google.maps.Map(document.getElementById('map'), {
     center: southStation,
     zoom: 10,
@@ -8,13 +8,13 @@ function initMap() {
     var infoWindow = new google.maps.InfoWindow;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
+        var pos = new google.maps.LatLng({
             lat: position.coords.latitude,
             lng: position.coords.longitude
-        };
+        });
 
         infoWindow.setPosition(pos);
-        var distance = google.maps.computeDistanceBetween(pos, southStation);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
 
 
         infoWindow.setContent(distance);
