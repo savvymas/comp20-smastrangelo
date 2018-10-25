@@ -20,7 +20,7 @@ function initMap() {
         var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
         //var disString = distance.toString();
-        infoWindow.setContent("Closest Stop: ", findShortestDistance(pos).name);
+        infoWindow.setContent(findShortestDistance(pos).name);
        
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
