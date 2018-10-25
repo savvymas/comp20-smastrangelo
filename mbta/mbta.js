@@ -189,15 +189,17 @@ function findShortestDistance(pos) {
 
     var allDistances = [];
 
-    allStops.forEach(calcDistances(item))
-        var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
-        allDistances = allDistances.push(dis);
+    allStops.forEach(calculateDis(item));
+
+    function calculateDis(item) {
+        var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, item);
+        allDistances.push(dis);
     };
 
 
 
     console.log(allDistances);
-    return Math.min(allDistances);
+    Math.min(allDistances);
 
 
 
