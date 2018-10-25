@@ -14,7 +14,7 @@ function initMap() {
         };
 
         infoWindow.setPosition(pos);
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
+        var distance = computeDistanceBetween(pos, southStation);
 
 
         infoWindow.setContent(distance);
