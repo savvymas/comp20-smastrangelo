@@ -69,21 +69,24 @@ function getTrainInfo(url) {
             data = request.responseText;
             return data;
             //console.log(data);
-            //loc = JSON.parse(data);
-            //elem = document.getElementById("location");
-            //elem.innerHTML = "<p>Carmen Sandiego was last seen at " + loc["description"] + "</p>";
+            trainTimes = JSON.parse(data);
+            returnHTML = "<ul>";
+            for (i = 0; i < trainTimes.length; i++) {
+                returnHTML += "<li>" + trainTimes[i].content + " by " + trainTimes[i].username + 
+                "</li>";
+            }
+            returnHTML += "</ul>";
+            document.getElementById("trainTimes").innerHTML =returnHTML;
         }
-        else if (request.readyState == 4 && request.status != 200) {
-            // think 404 or 500
-            document.getElementById("location").innerHTML = "<p>Whoops, something went terribly wrongo</p>";
-        }
-        else {
-            console.log("In progress...");
-        }
-    };
-		// Step 3: trigger the HTTP request
-		// The argument for send() --data that you want to send to web server
-    request.send(null);
+		else if (request.readyState == 4 && request.status != 200) {
+					document.getElementById("trainTimes").innerHTML = "Whoops, something went terribly wrong!";
+		}
+		else if (request.readyState == 3) {
+					document.getElementById("TrainTimes").innerHTML = "Come back soon!";
+		}
+	}
+    
+    request.send();
     
 
 
