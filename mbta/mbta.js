@@ -19,7 +19,7 @@ function initMap() {
         infoWindow.setPosition(pos);
         var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
         var disString = distance.toString();
-        infoWindow.setContent("Distance to South Station: ", disString);
+        infoWindow.setContent(disString);
         myMarker = new google.maps.Marker({position: pos, map: map});
         myMarker.addListener('click', function() {
             infoWindow.open(map, myMarker);
