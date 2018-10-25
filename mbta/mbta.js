@@ -67,6 +67,7 @@ function getTrainInfo(url) {
         if (request.readyState == 4 && request.status == 200) {
             console.log("Got the data back!");
             data = request.responseText;
+            return data;
             //console.log(data);
             //loc = JSON.parse(data);
             //elem = document.getElementById("location");
@@ -83,7 +84,7 @@ function getTrainInfo(url) {
 		// Step 3: trigger the HTTP request
 		// The argument for send() --data that you want to send to web server
     request.send(null);
-    return data;
+    
 
 
 
