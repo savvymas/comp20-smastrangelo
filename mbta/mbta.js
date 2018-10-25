@@ -6,7 +6,8 @@ function initMap() {
   });
 
     var infoWindow = new google.maps.InfoWindow ({
-        maxWidth: 100
+        maxWidth: 200,
+        maxHeight: 200
 
     });
     if (navigator.geolocation) {
@@ -19,7 +20,7 @@ function initMap() {
         infoWindow.setPosition(pos);
         var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
         var disString = distance.toString();
-        infoWindow.setContent(disString);
+        infoWindow.setContent("Distance to South Station: ", disString);
         myMarker = new google.maps.Marker({position: pos, map: map});
         myMarker.addListener('click', function() {
             infoWindow.open(map, myMarker);
