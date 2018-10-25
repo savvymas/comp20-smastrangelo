@@ -68,7 +68,7 @@ function getTrainInfo(url) {
         if (request.readyState == 4 && request.status == 200) {
             console.log("Got the data back!");
             data = request.responseText;
-            return data;
+            //return data;
             //console.log(data);
             trainTimes = JSON.parse(data);
             returnHTML = "<ul>";
