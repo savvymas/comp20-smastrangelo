@@ -17,15 +17,12 @@ function initMap() {
         });
 
         infoWindow.setPosition(pos);
-        var distance = findShortestDistance(pos);
+        var distance = findShortestDistance(pos).distance;
+        var closestStop = findShortestDistance(pos).stop;
         var disString = distance.toString();
         infoWindow.setContent(disString);
-        pos.Lat.ToString().Replace(",", ".");
-        pos.Lng.ToString().Replace(",", ".");
-        distance.Lat.ToString().Replace(",", ".");
-        distance.Lng.ToString().Replace(",", ".");
        
-        var shortestPath = [pos, distance];
+        var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
             path: shortestPath,
             geodesic: true,
@@ -203,13 +200,6 @@ function findShortestDistance(pos) {
 
     var allDistances = [];
 
-    // allStops.forEach(calculateDis(element));
-
-    // function calculateDis(element) {
-    //     var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, element);
-    //     allDistances.push(dis);
-    // };
-
     for (let i = 0; i < allStops.length; i++) {
         allDistances.push(google.maps.geometry.spherical.computeDistanceBetween(pos, allStops[i]));
     }
@@ -218,7 +208,9 @@ function findShortestDistance(pos) {
     console.log(allDistances);
     console.log(Math.min.apply(Math, allDistances));
 
-    return Math.min.apply(Math, allDistances);
+    let index = allDistances.indexOf(Math.min.apply(Math, allDistances));
+    let closestStop = allStops[index];
+    return {distance: Math.min.apply(Math, allDistances), stop: closestStop};
 
 
 
