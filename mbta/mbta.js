@@ -19,8 +19,8 @@ function initMap() {
         infoWindow.setPosition(pos);
         var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
-        var disString = distance.toString();
-        infoWindow.setContent(disString);
+        //var disString = distance.toString();
+        infoWindow.setContent(findShortestDistance(pos).name);
        
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
@@ -198,6 +198,11 @@ function findShortestDistance(pos) {
       broadway, northQuincy, shawmut, davis, alewife, kendallMIT, charlesMGH, downtownCrossing,
       quincyCenter, quincyAdams, ashmont, wollaston, fieldsCorner, centralSquare, braintree ];
 
+    var stopNames = ["South Station", "Andrew", "Porter Square", "Harvard Square", "JFK/Umass", "Savin Hill",
+     "Park Street", "Broadway", "North Quincy", "Shawmut", "Davis", "Alewife", "Kendall/MIT", "Charles/MGH", 
+     "Downtown Crossing", "Quincy Center", "Quincy Adams", "Ashmont", "Wollaston", "Fields Corner", "Central Square", 
+     "Braintree" ];
+
     var allDistances = [];
 
     for (let i = 0; i < allStops.length; i++) {
@@ -209,8 +214,8 @@ function findShortestDistance(pos) {
     console.log(Math.min.apply(Math, allDistances));
 
     let index = allDistances.indexOf(Math.min.apply(Math, allDistances));
-    let closestStop = allStops[index];
-    return {distance: Math.min.apply(Math, allDistances), stop: closestStop};
+
+    return {distance: Math.min.apply(Math, allDistances), stop: allStops[index], name: stopNames[index]};
 
 
 
