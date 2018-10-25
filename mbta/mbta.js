@@ -73,8 +73,8 @@ function getTrainInfo(url) {
             //console.log(data);
             trainTimes = JSON.parse(data);
             //returnHTML = "<ul>";
-            for (i = 0; i < trainTimes.length; i++) {
-                contentString =+ trainTimes[i].content + " by " + trainTimes[i].arrival_time
+            for (i = 0; i < trainTimes.data.length; i++) {
+                contentString =+ trainTimes.data[i].content + " by " + trainTimes.data[i].arrival_time
             }
             //returnHTML += "</ul>";
             document.getElementById("trainTimes").innerHTML =returnHTML;
