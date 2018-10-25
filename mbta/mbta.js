@@ -6,8 +6,7 @@ function initMap() {
   });
 
     var infoWindow = new google.maps.InfoWindow ({
-        maxWidth: 200,
-        maxHeight: 200
+        maxWidth: 200
 
     });
     if (navigator.geolocation) {
