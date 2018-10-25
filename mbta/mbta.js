@@ -17,7 +17,7 @@ function initMap() {
         });
 
         infoWindow.setPosition(pos);
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
+        var distance = findShortestDistance(pos);
         var disString = distance.toString();
         infoWindow.setContent(disString);
         myMarker = new google.maps.Marker({position: pos, map: map});
@@ -191,11 +191,12 @@ function findShortestDistance(pos) {
 
     allStops.forEach(calcDistances);
 
-
     function calcDistances(stop) {
       var dis = google.maps.geometry.spherical.computeDistanceBetween(pos, southStation);
       allDistances.push(dis);
     }
+
+    return Math.min(allDistances);
 
 
 
