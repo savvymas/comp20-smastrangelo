@@ -202,7 +202,7 @@ function findShortestDistance(pos) {
 
 
     console.log(allDistances);
-    console.log(Math.min(allDistances));
+    console.log(Math.min.apply(allDistances));
 
 
 
