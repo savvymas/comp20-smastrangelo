@@ -5,7 +5,10 @@ function initMap() {
     zoom: 10,
   });
 
-    var infoWindow = new google.maps.InfoWindow;
+    var infoWindow = new google.maps.InfoWindow ({
+        maxWidth: 100
+
+    });
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
         var pos = new google.maps.LatLng({
