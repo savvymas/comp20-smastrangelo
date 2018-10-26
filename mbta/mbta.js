@@ -61,7 +61,7 @@ function initMap() {
 }
 
 
-function getTrainInfo(url) {
+function getTrainInfo(url, marker) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
     console.log(url);
@@ -82,6 +82,7 @@ function getTrainInfo(url) {
             });
             console.log("Content String: ", returnHTML);
             infoWindow.setMap(map);
+            infoWindow.open();
 
             //document.getElementById("trainTimes").innerHTML =returnHTML;
         }
@@ -97,7 +98,7 @@ function getTrainInfo(url) {
                 maxWidth: 200,
                 content: "Whoops, something went terribly wrong!"
             });
-            infoWindow.setMap(map);
+            infoWindow.setMap(map, marker);
 		}
 	}
     
@@ -112,7 +113,7 @@ function setMarkers(map) {
     var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
 
     marker.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat');
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat', marker);
        //southStationWindow.open(map, marker);
     });
     var Andrew = {lat: 42.330154, lng: -71.057655};
