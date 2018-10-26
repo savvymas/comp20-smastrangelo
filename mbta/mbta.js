@@ -115,114 +115,114 @@ function setMarkers(map) {
     var marker = new google.maps.Marker({position: southStation, map: map, icon: 'train_small.png'});
 
     marker.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat', marker);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-sstat', this);
     });
     var Andrew = {lat: 42.330154, lng: -71.057655};
     var marker2 = new google.maps.Marker({position: Andrew, map: map, icon: 'train_small.png'});
 
     marker2.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-andrw', marker2);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-andrw', this);
     });
 
     var porterSq = {lat: 42.3884, lng: -71.11914899999999};
     var marker3 = new google.maps.Marker({position: porterSq, map: map, icon: 'train_small.png'});
     marker3.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-portr', marker3);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-portr', this);
     });
     var harvardSq = {lat: 42.373362, lng:  -71.118956};
     var marker4 = new google.maps.Marker({position: harvardSq, map: map, icon: 'train_small.png'});
     marker4.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-harsq', marker4);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-harsq', this);
     });
     var jkfUmass = {lat: 42.320685, lng: -71.052391};
     var marker5 = new google.maps.Marker({position: {lat: 42.320685, lng: -71.052391}, map: map, icon: 'train_small.png'});
     marker5.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-jfk', marker5);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-jfk', this);
     });
     var savinHill = {lat: 42.31129, lng: -71.053331};
     var marker6 = new google.maps.Marker({position: savinHill, map: map, icon: 'train_small.png'});
     marker6.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-shmnl', marker6);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-shmnl', this);
     });
     var parkStreet = {lat: 42.35639457, lng: -71.0624242};
     var marker7 = new google.maps.Marker({position: parkStreet, map: map, icon: 'train_small.png'});
     marker7.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-pktrm', marker7);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-pktrm', this);
     });
     var broadway = {lat: 42.342622, lng: -71.056967};
     var marker8 = new google.maps.Marker({position: broadway, map: map, icon: 'train_small.png'});
     marker8.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brdwy', marker8);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brdwy', this);
     });
     var northQuincy = {lat: 42.275275, lng: -71.029583};
     var marker9 = new google.maps.Marker({position: northQuincy, map: map, icon: 'train_small.png'});
     marker9.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-nqncy', marker9);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-nqncy', this);
     });
     var shawmut = {lat:42.29312583, lng: -71.06573796000001};
     var marker10 = new google.maps.Marker({position: shawmut, map: map, icon: 'train_small.png'});
     marker10.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-smmnl', marker10);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-smmnl', this);
     });
     var davis = {lat: 42.39674, lng: -71.121815};
     var marker11 = new google.maps.Marker({position: davis, map: map, icon: 'train_small.png'});
     marker11.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-davis', marker11);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-davis', this);
     });
     var alewife = {lat: 42.395428, lng: -71.142483};
     var marker12 = new google.maps.Marker({position: alewife, map: map, icon: 'train_small.png'});
     marker12.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-alfcl', marker12);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-alfcl', this);
     });
     var kendallMIT = {lat: 42.36249079, lng: -71.08617653};
     var marker13 = new google.maps.Marker({position: kendallMIT, map: map, icon: 'train_small.png'});
     marker13.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-knncl', marker13);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-knncl', this);
     });
     var charlesMGH = {lat: 42.361166, lng:  -71.070628};
     var marker14 = new google.maps.Marker({position: charlesMGH, map: map, icon: 'train_small.png'});
     marker14.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-chmnl', marker14);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-chmnl', this);
     });
     var downtownCrossing = {lat: 42.355518, lng: -71.060225};
     var marker15 = new google.maps.Marker({position: downtownCrossing, map: map, icon: 'train_small.png'});
     marker15.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-dwnxg', marker15);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-dwnxg', this);
     });
     var quincyCenter = {lat:  42.251809, lng: -71.005409};
     var marker16 = new google.maps.Marker({position: quincyCenter, map: map, icon: 'train_small.png'});
     marker16.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-qnctr', marker16);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-qnctr', this);
     });
     var quincyAdams = {lat:  42.233391, lng: -71.007153};
     var marker17 = new google.maps.Marker({position: quincyAdams, map: map, icon: 'train_small.png'});
     marker17.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-qamnl', marker17);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-qamnl', this);
     });
     var ashmont = {lat: 42.284652, lng: -71.06448899999999};
     var marker18 = new google.maps.Marker({position: ashmont, map: map, icon: 'train_small.png'});
     marker18.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-asmnl', marker18);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-asmnl', this);
     });
     var wollaston = {lat: 42.2665139, lng: -71.0203369};
     var marker19 = new google.maps.Marker({position: wollaston, map: map, icon: 'train_small.png'});
     marker19.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-wlsta', marker19);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-wlsta', this);
     });
     var fieldsCorner = {lat: 42.300093, lng: -71.061667};
     var marker20 = new google.maps.Marker({position: fieldsCorner, map: map, icon: 'train_small.png'});
     marker20.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-fldcr', marker20);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-fldcr', this);
     });
     var centralSquare = {lat: 42.365486, lng: -71.103802};
     var marker21 = new google.maps.Marker({position: centralSquare, map: map, icon: 'train_small.png'});
     marker21.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-cntsq', marker21);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-cntsq', this);
     });
     var braintree = {lat: 42.2078543, lng: -71.0011385};
     var marker22 = new google.maps.Marker({position: braintree, map: map, icon: 'train_small.png'});
     marker22.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brntn', marker22);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brntn', this2);
     });
 
       var stationCoordinates = [
