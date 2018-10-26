@@ -222,7 +222,7 @@ function setMarkers(map) {
     var braintree = {lat: 42.2078543, lng: -71.0011385};
     var marker22 = new google.maps.Marker({position: braintree, map: map, icon: 'train_small.png'});
     marker22.addListener('click', function() {
-        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brntn', this2);
+        getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-brntn', this);
     });
 
       var stationCoordinates = [
