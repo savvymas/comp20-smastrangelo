@@ -102,7 +102,7 @@ function getTrainInfo(url, marker) {
 		}
 	}
     
-    request.send();
+    request.send(null);
     
 
 
