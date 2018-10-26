@@ -5,7 +5,7 @@ function initMap() {
     center: southStation,
     zoom: 10,
   });
-
+   setMarkers(map);
     var infoWindow = new google.maps.InfoWindow ({
         maxWidth: 200
 
@@ -22,7 +22,7 @@ function initMap() {
         var closestStop = findShortestDistance(pos).stop;
         var disString = distance.toString();
         infoWindow.setContent(findShortestDistance(pos).name);
-        
+
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
             path: shortestPath,
@@ -43,7 +43,6 @@ function initMap() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
-        // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
 
@@ -57,7 +56,7 @@ function initMap() {
 
 
 
-    //setMarkers(map);
+ 
 }
 
 
@@ -83,7 +82,7 @@ function getTrainInfo(url, marker) {
                 + trainTimes.data[i].attributes.direction_id + "</li>";
             }
             returnHTML += "</ul>";
-            console.log(returnHTML);
+            //console.log(returnHTML);
             if (returnHTML == "<ul></ul>") {
                 returnHTML == "Station is on fire";
             }
