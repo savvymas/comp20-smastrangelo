@@ -81,7 +81,7 @@ function getTrainInfo(url) {
                 maxWidth: 200,
                 content: contentString
             });
-            console.log(contentString);
+            console.log("Content String: ", contentString);
             infoWindow.setMap(map);
             //returnHTML += "</ul>";
             //document.getElementById("trainTimes").innerHTML =returnHTML;
