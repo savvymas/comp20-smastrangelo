@@ -83,6 +83,7 @@ function getTrainInfo(url, marker) {
                 + direction + "</li>";
             }
             returnHTML += "</ul>";
+            console.log(returnHTML);
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
                 content: returnHTML
