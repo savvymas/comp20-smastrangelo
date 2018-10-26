@@ -70,7 +70,7 @@ function getTrainInfo(url, marker) {
             info = request.responseText;
             trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
-            for (i = 0; i < trainTimes.length; i++) {
+            for (i = 0; i < trainTimes.data.length; i++) {
                 returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
                 + "Departure Time: " + trainTimes.data[i].attributes.departure_time + "Direction: "
                 + trainTimes.data[i].direction_id
