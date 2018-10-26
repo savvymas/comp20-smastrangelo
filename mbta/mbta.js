@@ -64,16 +64,22 @@ function initMap() {
 function getTrainInfo(url, marker) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
-    console.log(url);
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             info = request.responseText;
             trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
+            var direction;
             for (i = 0; i < trainTimes.data.length; i++) {
+                if (trainTimes.data[i].attributes.direction_id == 1){
+                    direction = "NorthBound";
+                }else {
+                    direction = "SouthBound";
+                }
+
                 returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
                 + "Departure Time: " + trainTimes.data[i].attributes.departure_time + "Direction: "
-                + trainTimes.data[i].attributes.direction_id
+                + direction
                 + "</li>";
             }
             returnHTML += "</ul>";
@@ -81,7 +87,7 @@ function getTrainInfo(url, marker) {
                 maxWidth: 200,
                 content: returnHTML
             });
-            //console.log("Content String: ", returnHTML);
+
             infoWindow.open(map, marker);
 
         }
