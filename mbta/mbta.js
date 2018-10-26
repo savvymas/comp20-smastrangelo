@@ -81,8 +81,8 @@ function getTrainInfo(url, marker) {
                 content: returnHTML
             });
             console.log("Content String: ", returnHTML);
-            infoWindow.setMap(map);
-            infoWindow.open();
+            //infoWindow.setMap(map);
+            infoWindow.open(map, marker);
 
             //document.getElementById("trainTimes").innerHTML =returnHTML;
         }
