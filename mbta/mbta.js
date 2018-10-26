@@ -21,7 +21,7 @@ function initMap() {
         var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
         var disString = distance.toString();
-        infoWindow.setContent(findShortestDistance(pos).name);
+        infoWindow.setContent("Closest Station: ", findShortestDistance(pos).name, disString);
 
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
@@ -72,9 +72,9 @@ function getTrainInfo(url, marker) {
             
             for (i = 0; i < trainTimes.data.length; i++) {
                 if (trainTimes.data[i].attributes.direction_id == 1){
-                    direction = "NorthBound";
+                    direction = "North Bound";
                 } else {
-                    direction = "SouthBound";
+                    direction = "South Bound";
                 }
 
                 returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
