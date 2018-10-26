@@ -19,9 +19,9 @@ function initMap() {
 
         infoWindow.setPosition(pos);
         //var distance = findShortestDistance(pos).distance;
-        var closestStop = findShortestDistance(pos).stop;
+        //var closestStop = findShortestDistance(pos).stop;
         //var disString = distance.toString();
-        infoWindow.setContent(findShortestDistance(pos).name);
+        //infoWindow.setContent(findShortestDistance(pos).name);
        
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
