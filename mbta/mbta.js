@@ -71,10 +71,10 @@ function getTrainInfo(url, marker) {
             data = request.responseText;
             trainTimes = JSON.parse(data);
             returnHTML = "<ul>";
-            for (i = 0; i < trainTimes.length; i++) {
-                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].arrival_time 
+            //for (i = 0; i < trainTimes.length; i++) {
+                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[0].arrival_time 
                 + "</li>";
-            }
+            //}
             returnHTML += "</ul>";
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
