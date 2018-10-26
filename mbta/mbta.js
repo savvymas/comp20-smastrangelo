@@ -81,7 +81,7 @@ function getTrainInfo(url, marker) {
 
                 returnHTML += "<li>" + "<b>" + "Arrival Time: " + "</b>" + trainTimes.data[i].attributes.arrival_time 
                 +  "<b>" + "Departure Time: " +  "</b>" + trainTimes.data[i].attributes.departure_time +  "<b>" + 
-                "Direction: " + "</b>" + + direction + "</li>";
+                "Direction: " + "</b>" + direction + "</li>";
             }
             returnHTML += "</ul>";
             if (returnHTML == "<ul></ul>") {
