@@ -79,9 +79,9 @@ function getTrainInfo(url, marker) {
                     direction = "South Bound";
                 }
 
-                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
-                + "Departure Time: " + trainTimes.data[i].attributes.departure_time + "Direction: "
-                + direction + "</li>";
+                returnHTML += "<li>" + "<b>" + "Arrival Time: " + "</b>" + trainTimes.data[i].attributes.arrival_time 
+                +  "<b>" + "Departure Time: " +  "</b>" + trainTimes.data[i].attributes.departure_time +  "<b>" + 
+                "Direction: " + "</b>" + + direction + "</li>";
             }
             returnHTML += "</ul>";
             if (returnHTML == "<ul></ul>") {
