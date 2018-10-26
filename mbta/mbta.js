@@ -331,7 +331,10 @@ function findShortestDistance(pos) {
 
     let index = allDistances.indexOf(Math.min.apply(Math, allDistances));
 
-    return {distance: Math.min.apply(Math, allDistances), stop: allStops[index], name: stopNames[index]};
+    var minMeters = Math.min.apply(Math, allDistances);
+    var minMiles = minMeters * 0.00062137;
+
+    return {distance: minMiles, stop: allStops[index], name: stopNames[index]};
 
 
 
