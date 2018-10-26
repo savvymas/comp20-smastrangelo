@@ -70,10 +70,10 @@ function getTrainInfo(url, marker) {
             trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
             var direction;
-            for (i = 0; i < trainTimes.data.length; i++) {
+            for (i = 0; i < trainTimes.length; i++) {
                 if (trainTimes.data[i].attributes.direction_id == 1){
                     direction = "NorthBound";
-                }else {
+                } else {
                     direction = "SouthBound";
                 }
 
