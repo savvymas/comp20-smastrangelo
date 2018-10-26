@@ -72,16 +72,15 @@ function getTrainInfo(url, marker) {
             returnHTML = "<ul>";
             
             for (i = 0; i < trainTimes.data.length; i++) {
-                if (trainTimes.data[i].attributes.direction_id == 1){
-                    direction = "NorthBound";
-                } else {
-                    direction = "SouthBound";
-                }
+                // if (trainTimes.data[i].attributes.direction_id == 1){
+                //     direction = "NorthBound";
+                // } else {
+                //     direction = "SouthBound";
+                // }
 
                 returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
                 + "Departure Time: " + trainTimes.data[i].attributes.departure_time + "Direction: "
-                + direction
-                + "</li>";
+                + direction + "</li>";
             }
             returnHTML += "</ul>";
             var infoWindow = new google.maps.InfoWindow ({
