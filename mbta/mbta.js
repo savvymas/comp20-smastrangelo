@@ -18,10 +18,10 @@ function initMap() {
         });
 
         infoWindow.setPosition(pos);
-        var distance = findShortestDistance(pos).distance;
+        //var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
-        var disString = distance.toString();
-        infoWindow.setContent(disString, findShortestDistance(pos).name);
+        //var disString = distance.toString();
+        infoWindow.setContent(findShortestDistance(pos).name);
        
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
