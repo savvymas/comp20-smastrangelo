@@ -68,11 +68,11 @@ function getTrainInfo(url, marker) {
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             console.log("Got the data back!");
-            data = request.responseText;
-            trainTimes = JSON.parse(data);
+            info = request.responseText;
+            trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
             //for (i = 0; i < trainTimes.length; i++) {
-                returnHTML += "<li>" + "Arrival Time: " + trainTimes.attributes[1].arrival_time 
+                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[0].attributes.arrival_time 
                 + "</li>";
             //}
             returnHTML += "</ul>";
