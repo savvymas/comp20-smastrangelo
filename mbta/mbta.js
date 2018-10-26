@@ -81,7 +81,7 @@ function getTrainInfo(url, marker) {
                 maxWidth: 200,
                 content: returnHTML
             });
-            console.log("Content String: ", returnHTML);
+            //console.log("Content String: ", returnHTML);
             infoWindow.open(map, marker);
 
         }
