@@ -64,13 +64,14 @@ function initMap() {
 function getTrainInfo(url, marker) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
+    var direction;
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             info = request.responseText;
             trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
-            var direction;
-            for (i = 0; i < trainTimes.length; i++) {
+            
+            for (i = 0; i < trainTimes.data.length; i++) {
                 if (trainTimes.data[i].attributes.direction_id == 1){
                     direction = "NorthBound";
                 } else {
