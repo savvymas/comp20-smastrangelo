@@ -84,15 +84,24 @@ function getTrainInfo(url) {
                 maxWidth: 200,
                 content: contentString
             });
+            infoWindow.setMap(map);
             //returnHTML += "</ul>";
-            document.getElementById("trainTimes").innerHTML =returnHTML;
+            //document.getElementById("trainTimes").innerHTML =returnHTML;
         }
-		else (request.readyState == 4 && request.status != 200) {
-					document.getElementById("trainTimes").innerHTML = "Whoops, something went terribly wrong!";
+		else if (request.readyState == 4 && request.status != 200) {
+            var infoWindow = new google.maps.InfoWindow ({
+                maxWidth: 200,
+                content: "Whoops, something went terribly wrong!"
+            });
+            infoWindow.setMap(map);
 		}
-		// else if (request.readyState == 3) {
-		// 			document.getElementById("trainTimes.data").innerHTML = "Come back soon!";
-		// }
+		else (request.readyState == 3) {
+            var infoWindow = new google.maps.InfoWindow ({
+                maxWidth: 200,
+                content: "Whoops, something went terribly wrong!"
+            });
+            infoWindow.setMap(map);
+		}
 	}
     
     request.send();
