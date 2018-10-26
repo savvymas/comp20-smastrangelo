@@ -72,7 +72,7 @@ function getTrainInfo(url, marker) {
             trainTimes = JSON.parse(data);
             returnHTML = "<ul>";
             for (i = 0; i < trainTimes.length; i++) {
-                returnHTML += "<li>" + "Arrival Time: " + trainTimes[i].arrival_time 
+                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].arrival_time 
                 + "</li>";
             }
             returnHTML += "</ul>";
@@ -91,14 +91,14 @@ function getTrainInfo(url, marker) {
                 maxWidth: 200,
                 content: "Whoops, something went terribly wrong!"
             });
-            infoWindow.setMap(map);
+            infoWindow.open(map, marker);
 		}
 		else if (request.readyState == 3) {
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
                 content: "Whoops, something went terribly wrong!"
             });
-            infoWindow.setMap(map, marker);
+            infoWindow.open(map, marker);
 		}
 	}
     
