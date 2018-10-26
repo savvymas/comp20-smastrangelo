@@ -7,7 +7,7 @@ function initMap() {
   });
    setMarkers(map);
     var infoWindow = new google.maps.InfoWindow ({
-        maxWidth: 200
+        maxWidth: 200,
 
     });
     if (navigator.geolocation) {
@@ -20,8 +20,9 @@ function initMap() {
         infoWindow.setPosition(pos);
         var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
-        var disString = distance.toString();
-        infoWindow.setContent("Closest Station: ", findShortestDistance(pos).name, disString);
+        var content = "Closest Station: " + findShortestDistance(pos).name + distance.toString();
+
+        infoWindow.setContent(content);
 
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
