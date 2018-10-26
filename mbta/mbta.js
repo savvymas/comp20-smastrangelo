@@ -93,13 +93,6 @@ function getTrainInfo(url, marker) {
             });
             infoWindow.open(map, marker);
 		}
-		else if (request.readyState == 3) {
-            var infoWindow = new google.maps.InfoWindow ({
-                maxWidth: 200,
-                content: "Whoops, something else"
-            });
-            infoWindow.open(map, marker);
-		}
 	}
     
     request.send(null);
