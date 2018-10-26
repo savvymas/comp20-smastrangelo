@@ -1,7 +1,7 @@
-var map;
+//var map;
 function initMap() {
   var southStation =  new google.maps.LatLng({lat: 42.352271, lng: -71.05524200000001});
-  map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: southStation,
     zoom: 10,
   });
@@ -22,7 +22,7 @@ function initMap() {
         var closestStop = findShortestDistance(pos).stop;
         var disString = distance.toString();
         infoWindow.setContent(findShortestDistance(pos).name);
-       
+        
         var shortestPath = [pos, closestStop];
         var shortestPathLine = new google.maps.Polyline({
             path: shortestPath,
