@@ -57,7 +57,7 @@ function initMap() {
 
 
 
-    setMarkers(map);
+    //setMarkers(map);
 }
 
 
