@@ -63,10 +63,6 @@ function initMap() {
 
 function getTrainInfo(url) {
     var contentString = "";
-    var infoWindow = new google.maps.InfoWindow ({
-        maxWidth: 200
-
-    });
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
     console.log(url);
@@ -85,6 +81,7 @@ function getTrainInfo(url) {
                 maxWidth: 200,
                 content: contentString
             });
+            console.log(contentString);
             infoWindow.setMap(map);
             //returnHTML += "</ul>";
             //document.getElementById("trainTimes").innerHTML =returnHTML;
