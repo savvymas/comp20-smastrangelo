@@ -84,9 +84,8 @@ function getTrainInfo(url, marker) {
                 + direction + "</li>";
             }
             returnHTML += "</ul>";
-            //console.log(returnHTML);
             if (returnHTML == "<ul></ul>") {
-                returnHTML == "Station is on fire";
+                returnHTML == "This station is closed";
             }
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
