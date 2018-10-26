@@ -1,7 +1,8 @@
 Savannah Mastrangelo -- Assignment 2
 
 Most parts are implemented correctly, although stations that
-are out of order might not have information in window. 
+are out of order might not have information in window. Station schedules
+are missing styling. 
 
 Hours Spent: 6
 
