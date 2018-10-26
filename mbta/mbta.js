@@ -67,24 +67,23 @@ function getTrainInfo(url, marker) {
     console.log(url);
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
-            console.log("Got the data back!");
             info = request.responseText;
             trainTimes = JSON.parse(info);
             returnHTML = "<ul>";
-            //for (i = 0; i < trainTimes.length; i++) {
-                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[0].attributes.arrival_time 
+            for (i = 0; i < trainTimes.length; i++) {
+                returnHTML += "<li>" + "Arrival Time: " + trainTimes.data[i].attributes.arrival_time 
+                + "Departure Time: " + trainTimes.data[i].attributes.departure_time + "Direction: "
+                + trainTimes.data[i].direction_id
                 + "</li>";
-            //}
+            }
             returnHTML += "</ul>";
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
                 content: returnHTML
             });
             console.log("Content String: ", returnHTML);
-            //infoWindow.setMap(map);
             infoWindow.open(map, marker);
 
-            //document.getElementById("trainTimes").innerHTML =returnHTML;
         }
 		else if (request.readyState == 4 && request.status != 200) {
             var infoWindow = new google.maps.InfoWindow ({
