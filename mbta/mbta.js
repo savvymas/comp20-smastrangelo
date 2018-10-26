@@ -201,7 +201,7 @@ function setMarkers(map) {
     });
     var fieldsCorner = {lat: 42.300093, lng: -71.061667};
     var marker20 = new google.maps.Marker({position: fieldsCorner, map: map, icon: 'train_small.png'});
-    marker21.addListener('click', function() {
+    marker20.addListener('click', function() {
         getTrainInfo('https://chicken-of-the-sea.herokuapp.com/redline/schedule.json?stop_id=place-fldcr', marker20);
     });
     var centralSquare = {lat: 42.365486, lng: -71.103802};
