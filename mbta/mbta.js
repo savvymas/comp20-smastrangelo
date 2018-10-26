@@ -95,7 +95,7 @@ function getTrainInfo(url) {
             });
             infoWindow.setMap(map);
 		}
-		else (request.readyState == 3) {
+		else if (request.readyState == 3) {
             var infoWindow = new google.maps.InfoWindow ({
                 maxWidth: 200,
                 content: "Whoops, something went terribly wrong!"
