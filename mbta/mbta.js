@@ -20,7 +20,7 @@ function initMap() {
         infoWindow.setPosition(pos);
         var distance = findShortestDistance(pos).distance;
         var closestStop = findShortestDistance(pos).stop;
-        var content = "Closest Station: " + findShortestDistance(pos).name + distance.toString();
+        var content = "Closest Station: " + findShortestDistance(pos).name + ": " + distance.toString();
 
         infoWindow.setContent(content);
 
