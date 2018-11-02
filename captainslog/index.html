@@ -5,10 +5,29 @@
 <head>
     <meta charset="utf-8" />
     <title>Captain's Log</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        // Your work will be done here...
+
+
+        function reload(txt) {
+            var elem = document.getElementById("log");
+            var output = "";
+            for (var i = 0; i < localStorage.length; i++) {
+                output = output + "<p>" + localStorage.getItem(localStorage.key(i))
+                 + "</p>\n";
+            }
+            elem.innerHTML = output;
+            //localStorage.clear();
+            
+        }
+
+         $(document).keypress(function() { 
+            txt = document.getElementById("msg").value;
+            localStorage[new Date().getTime()] = txt;
+            //reload();
+        });
+
     </script>
 </head>
 
