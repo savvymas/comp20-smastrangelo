@@ -10,22 +10,24 @@
     <script>
 
 
-        function reload(txt) {
+        function reload() {
             var elem = document.getElementById("log");
             var output = "";
-            for (var i = 0; i < localStorage.length; i++) {
-                output = output + "<p>" + localStorage.getItem(localStorage.key(i))
-                 + "</p>\n";
+            for (var i = localStorage.length - 1; i > 0; i--) {
+                output = output + "<p>" + localStorage.getItem(localStorage.key(i)) 
+                + ": " + localStorage.getItem("value") + "</p>\n";
             }
             elem.innerHTML = output;
-            //localStorage.clear();
+            localStorage.clear();
             
         }
 
-         $(document).keypress(function() { 
-            txt = document.getElementById("msg").value;
-            localStorage[new Date().getTime()] = txt;
-            //reload();
+         $(document).keypress(function(e) { 
+            if (e.which == 13) {
+                txt = document.getElementById("msg").value;
+                localStorage[new Date().getTime()] = txt;
+                reload();
+            }
         });
 
     </script>
