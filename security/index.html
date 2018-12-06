@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head>
+
+<title>Assignment 4</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+
+<h1>Introduction</h1>
+<p> In this assignment I assessed Ming's source code from Assignment 3 and looked for 
+    security vulnerabilites.</p>
+
+<img src="Putin-Hacker.png" width="200" height="200">
+
+<h2>Methodology</h2>
+
+<p>For the pen testing, the primary tool that I used was curl. I tested to see what
+    parts of the site I could access and manipulate using curl.</p>
+
+<h2>Abstract of Findings</h2>
+
+<p>I found multiple security vulnerabilites. For example, the data and information
+    in the site is very vulnerable and easy to change and manipulate. Through 
+    the same avenue that I manipulated the scores, I was able to insert other 
+    bugs and even break the website. </p>
+
+<h2>Issues Found<h2>
+
+
+<table>
+    <tr>
+        <th>Issue</th>
+        <th>Location</th>
+        <th>Severity</th>
+        <th>Description</th>
+        <th>Proof of Vulnerability</th>
+        <th>Resolution</th>
+    </tr>
+    <tr>
+        <td>Database Injection</td>
+        <td>Index.html (scores page)</td>
+        <td>Medium: Any outside source can manipulate the scores being displayed.</td>
+        <td>By using curl I was able to add fake information to the scores list. 
+            <code>curl --data "username=Savannah&score=999&grid={}" https://gameserver2048.herokuapp.com/submit</code>
+        </td>
+        <td><img src="Hack-1.png" width="500"></td>
+        <td>To prevent this, validate all input before putting it in the database.</td>
+    </tr>
+    <tr>
+        <td>Cross Site Scripting</td>
+        <td>Index.html (scores page)</td>
+        <td>Medium: This is an example of the more malicious things outside sources can do just by having
+            access to the data. 
+        </td>
+        <td>By using curl I was able to add fake information to the scores list. 
+                <code>curl --data "username=&ltscript&gtwindow.alert();&lt/script&gt&ampscore=0&ampgrid={}" https://gameserver2048.herokuapp.com/submit</code>
+            </td>
+        <td><img src="Hack-2.png" width="500"></td>
+        <td>Content-type header is not secure because it is set to text/html. 
+            An alternative that would prevent XSS attacks is setting the content type to 
+            application/json.
+            <img src="Solution-2.png" width="500">
+        </td>
+    </tr>
+    <tr>
+        <td>Cross Site Scripting</td>
+        <td>Index.html (scores page)</td>
+        <td>High: This vulnerability allowed me to completely break the site so that it could
+            not be rendered at all.
+        </td>
+        <td>By using curl I was able to inject an infinite loop causing the site to
+            overload and crash.
+            <code>curl --data "username=&ltscript&rtwhile(true);&lt/script&rt&ampscore=0&ampgrid={}" https://gameserver2048.herokuapp.com/submit</code>
+         </td>
+        <td><img src="Hack-3.png" width="500"> <img src="Hack-3.5.png" width="500"></td>
+        <td>Content-type header is not secure because it is set to text/html. 
+            An alternative that would prevent XSS attacks is setting the content type to 
+            application/json.
+            <img src="Solution-2.png" width="500">
+        </td>
+    </tr>
+
+</table>
+
+
+</body>
+
+</html>
